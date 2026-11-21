@@ -238,6 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const listBusinessBtns = document.querySelectorAll('.trigger-list-business');
   const listModal = document.getElementById('list-business-modal');
   const listModalClose = document.getElementById('list-modal-close');
+  const listBusinessForm = document.getElementById('list-business-form');
+  const listCategorySelect = document.getElementById('list-biz-category');
+  const customCategoryInput = document.getElementById('custom-category-input');
 
   function openListModal() {
     if (!listModal) return;
@@ -253,6 +256,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { scale: 0.9, opacity: 0, y: 20 },
         { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: 'back.out(1.5)' }
       );
+    }
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
     }
   }
 
@@ -297,6 +303,67 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === listModal) {
         closeListModal();
       }
+    });
+  }
+
+  // Toggle Custom Category Input smoothly
+  if (listCategorySelect && customCategoryInput) {
+    listCategorySelect.addEventListener('change', () => {
+      if (listCategorySelect.value === 'custom') {
+        customCategoryInput.classList.remove('hidden');
+        customCategoryInput.setAttribute('required', 'required');
+        customCategoryInput.focus();
+        if (typeof gsap !== 'undefined') {
+          gsap.fromTo(customCategoryInput, { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.25 });
+        }
+      } else {
+        customCategoryInput.classList.add('hidden');
+        customCategoryInput.removeAttribute('required');
+        customCategoryInput.value = '';
+      }
+    });
+  }
+
+  // Handle List Business Form Submission via Admin WhatsApp
+  if (listBusinessForm) {
+    listBusinessForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('list-biz-name');
+      const phoneInput = document.getElementById('list-biz-phone');
+      const addressInput = document.getElementById('list-biz-address');
+      const detailsInput = document.getElementById('list-biz-details');
+
+      const bizName = nameInput ? nameInput.value.trim() : '';
+      let category = listCategorySelect ? listCategorySelect.value : '';
+      if (category === 'custom' && customCategoryInput) {
+        category = customCategoryInput.value.trim() || 'Custom';
+      }
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const address = addressInput ? addressInput.value.trim() : '';
+      const details = detailsInput && detailsInput.value.trim() ? detailsInput.value.trim() : 'N/A';
+
+      const waMessage = 
+`Assalam o Alaikum MZG Hub Admin, I want to register my business on Muzaffargarh City Hub:
+
+🏢 Business Name: ${bizName}
+📁 Category: ${category}
+📞 Phone / WhatsApp: ${phone}
+📍 Address: ${address}
+🏷️ Offerings / Notes: ${details}`;
+
+      const waUrl = `https://wa.me/923427883728?text=${encodeURIComponent(waMessage)}`;
+      window.open(waUrl, '_blank');
+
+      listBusinessForm.reset();
+      if (customCategoryInput) {
+        customCategoryInput.classList.add('hidden');
+        customCategoryInput.removeAttribute('required');
+        customCategoryInput.value = '';
+      }
+
+      closeListModal();
+      showToast('Opening WhatsApp to submit your business listing...');
     });
   }
 
