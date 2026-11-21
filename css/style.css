@@ -1,0 +1,470 @@
+/* ==========================================================================
+   Muzaffargarh City Hub - Premium Stylesheet
+   Phase 1: Dark Luxury, Scroll-Driven Visual Engine
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --color-bg-base: #050507;
+  --color-bg-surface: #0a0b10;
+  --color-bg-card: rgba(14, 15, 22, 0.72);
+  --color-gold: #f59e0b;
+  --color-gold-light: #fbbf24;
+  --color-gold-glow: rgba(245, 158, 11, 0.25);
+  --color-emerald: #10b981;
+  --color-emerald-light: #34d399;
+  --color-emerald-glow: rgba(16, 185, 129, 0.3);
+  --border-glass: rgba(255, 255, 255, 0.07);
+  --border-gold-subtle: rgba(245, 158, 11, 0.2);
+}
+
+/* Base resets & typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-bg-base);
+  color: #f3f4f6;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-bg-base);
+  min-height: 100vh;
+}
+
+/* Display & Heading Typography */
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ==========================================================================
+   Lenis Smooth Scrolling Standards
+   ========================================================================== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.2);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.5);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+/* ==========================================================================
+   Glassmorphism & Lighting Effects
+   ========================================================================== */
+.glass-header {
+  background: rgba(10, 11, 16, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-header-compact {
+  background: rgba(5, 5, 7, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 14px 40px -8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(245, 158, 11, 0.1);
+}
+
+.glass-card {
+  background: rgba(14, 15, 22, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 24px rgba(245, 158, 11, 0.12);
+}
+
+/* Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #fef3c7 35%, #fbbf24 70%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-metallic {
+  background: linear-gradient(180deg, #ffffff 0%, #fde68a 40%, #f59e0b 80%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-emerald-gradient {
+  background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Atmospheric Glows & Vignettes */
+.hero-vignette {
+  background: radial-gradient(circle at 50% 50%, transparent 20%, rgba(5, 5, 7, 0.4) 60%, #050507 98%);
+  pointer-events: none;
+}
+
+.hero-bottom-fade {
+  background: linear-gradient(to bottom, transparent 0%, rgba(5, 5, 7, 0.4) 60%, #050507 100%);
+  pointer-events: none;
+}
+
+/* Pulsing Live Dot */
+@keyframes emeraldPulseRing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.emerald-pulse-ring {
+  animation: emeraldPulseRing 2.4s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+/* Subtle mouse scroll indicator */
+@keyframes scrollWheelAnim {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(8px);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mouse-scroll-wheel {
+  animation: scrollWheelAnim 1.8s ease-in-out infinite;
+}
+
+/* Shimmer Button Effect */
+.btn-gold-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  transition: all 0.3s ease;
+}
+
+.btn-gold-shimmer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 80%
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-gold-shimmer:hover::before {
+  transform: rotate(30deg) translateX(100%);
+}
+
+.btn-gold-shimmer:hover {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Mobile Drawer Overlay */
+#mobile-drawer {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#mobile-drawer.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#mobile-drawer:not(.active) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* ==========================================================================
+   Phase 2: Luxury Business Cards & Interactive Dynamics
+   ========================================================================== */
+
+/* Hide horizontal scrollbar for category pills while preserving scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Luxury Interactive Business Card */
+.business-card {
+  position: relative;
+  background: rgba(13, 15, 22, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Dynamic Radial Cursor Spotlight Border */
+.business-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(245, 158, 11, 0.5),
+    rgba(16, 185, 129, 0.25) 35%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+}
+
+.business-card:hover::before {
+  opacity: 1;
+}
+
+/* Ambient Radial Glow on Card Surface */
+.business-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    320px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(245, 158, 11, 0.07),
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.business-card:hover::after {
+  opacity: 1;
+}
+
+.business-card:hover {
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.8), 0 0 28px rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* Emerald WhatsApp Button with Sweep Animation */
+.btn-whatsapp-sweep {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  transition: all 0.28s ease;
+}
+
+.btn-whatsapp-sweep::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  transform: rotate(35deg) translateX(-120%);
+  transition: transform 0.65s ease;
+}
+
+.btn-whatsapp-sweep:hover::before {
+  transform: rotate(35deg) translateX(120%);
+}
+
+.btn-whatsapp-sweep:hover {
+  box-shadow: 0 0 22px rgba(16, 185, 129, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Search Input Animated Focus Glow */
+.search-input-glow {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.search-input-glow:focus {
+  border-color: rgba(245, 158, 11, 0.6);
+  background-color: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Category Pill Active Glow */
+.category-pill-active {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  border-color: rgba(245, 158, 11, 0.6) !important;
+  color: #fbbf24 !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.2);
+}
+
+
+/* ==========================================================================
+   Phase 3 & Upgrades: 100% Smooth Infinite Marquee, Cards & City Stats
+   ========================================================================== */
+
+/* Infinite Velocity Marquee (100% Smooth GPU translate3d Loop) */
+@keyframes marqueeLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 35s linear infinite;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+#marquee-strip-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Card Fallback Subtle Geometric Blueprint Grid */
+.card-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Stat Cards Hover Border Glow */
+.stat-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.8), 0 0 22px rgba(245, 158, 11, 0.1);
+}
+
+/* Floating Toast Notification */
+#toast-notification {
+  box-shadow: 0 12px 32px -4px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+
+/* ==========================================================================
+   Phase 4: Preloader, Scroll Progress, Back to Top & Accessibility
+   ========================================================================== */
+
+/* Top Scroll Progress Bar Glow */
+#scroll-progress-bar {
+  transition: width 0.08s linear;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.7), 0 0 4px rgba(16, 185, 129, 0.5);
+}
+
+/* Back to Top Floating Button */
+#back-to-top-btn {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

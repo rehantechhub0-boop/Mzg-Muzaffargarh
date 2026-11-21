@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muzaffargarh City Hub — The City's Finest, Reimagined</title>
+  <meta name="description" content="Awwwards-grade, ultra-smooth local business directory for Muzaffargarh. Curated verified merchants, direct WhatsApp connect, and premier commerce.">
+
+  <!-- Favicon / Branding -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              950: '#050507',
+              900: '#0a0b10',
+              850: '#0e1017',
+              800: '#141724',
+              700: '#1e2235'
+            },
+            gold: {
+              300: '#fde68a',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309'
+            },
+            emerald: {
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP 3 & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll CDN -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body class="bg-[#050507] text-gray-100 antialiased selection:bg-amber-500/30 selection:text-amber-300 overflow-x-hidden">
+
+  <!-- =======================================================================
+       Top Glowing Scroll Progress Bar (0% to 100%)
+       ======================================================================= -->
+  <div id="scroll-progress-bar" class="fixed top-0 left-0 h-[3px] w-0 bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400 z-[100] pointer-events-none shadow-[0_0_12px_rgba(245,158,11,0.6)]"></div>
+
+  <!-- =======================================================================
+       Fast Cinematic Preloader (~0.8s, non-blocking)
+       ======================================================================= -->
+  <div id="preloader" class="fixed inset-0 z-[110] flex flex-col items-center justify-center bg-[#050507]">
+    <div class="flex flex-col items-center space-y-4">
+      <div class="relative flex items-center justify-center">
+        <img src="images/logo.png" alt="MZG HUB Logo" class="w-16 h-16 object-cover rounded-full border border-amber-500/40 shadow-[0_0_30px_rgba(245,158,11,0.35)]">
+        <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+          <span class="emerald-pulse-ring absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+        </span>
+      </div>
+
+      <div class="text-center">
+        <h2 class="font-display font-extrabold text-sm tracking-[0.25em] text-white uppercase">MUZAFFARGARH HUB</h2>
+        <p class="text-[10px] font-mono tracking-widest text-emerald-400 uppercase mt-0.5">Initializing Experience...</p>
+      </div>
+
+      <!-- Gold Progress Line -->
+      <div class="w-48 h-1 bg-white/10 rounded-full overflow-hidden mt-2">
+        <div id="preloader-line" class="h-full w-0 bg-gradient-to-r from-amber-500 to-emerald-400 rounded-full"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       1. Fully Animated Floating Header (Navbar)
+       ======================================================================= -->
+  <header id="main-header" class="fixed top-0 inset-x-0 z-50 pt-4 px-4 sm:px-6 pointer-events-none">
+    <nav id="header-pill" class="max-w-6xl mx-auto flex items-center justify-between glass-header rounded-full py-3.5 px-6 pointer-events-auto transition-all duration-300">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="relative flex items-center justify-center">
+          <img src="images/logo.png" alt="MZG HUB Logo" class="w-10 h-10 object-cover rounded-full border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.25)] transition-transform duration-300 group-hover:scale-105">
+          <span class="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+            <span class="emerald-pulse-ring absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center space-x-1.5">
+            <span class="font-display font-extrabold text-sm sm:text-base tracking-wider text-white">MZG HUB</span>
+            <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hidden sm:inline-block">LIVE</span>
+          </div>
+          <span class="text-[9px] tracking-widest uppercase font-mono text-gray-400 hidden sm:block">Muzaffargarh Network</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <a href="#directory-section" class="px-3.5 py-1.5 text-xs lg:text-sm font-medium text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Explore</a>
+        <a href="#category-pills-container" class="px-3.5 py-1.5 text-xs lg:text-sm font-medium text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Categories</a>
+        <a href="#stats-section" class="px-3.5 py-1.5 text-xs lg:text-sm font-medium text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Why MZG Hub</a>
+        
+        <!-- Live City Clock Chip -->
+        <div class="hidden lg:flex items-center space-x-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] font-mono text-gray-400">
+          <i data-lucide="clock" class="w-3 h-3 text-amber-400"></i>
+          <span id="live-city-clock">11:15 AM PKT</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-3">
+        <button class="trigger-list-business btn-gold-shimmer hidden sm:flex items-center space-x-2 px-4 py-2 rounded-full text-xs font-semibold text-gray-950 font-display shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40">
+          <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+          <span>List Business</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-amber-500/40 text-gray-200 transition-colors" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =======================================================================
+       Mobile Slide-down Drawer
+       ======================================================================= -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 flex flex-col justify-between bg-[#050507]/95 backdrop-blur-2xl p-6 md:hidden">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <div class="flex items-center space-x-2">
+        <span class="font-display font-bold text-lg text-white">MZG HUB</span>
+        <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+      </div>
+      <button id="mobile-drawer-close" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 text-gray-300 hover:text-white" aria-label="Close Mobile Menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items -->
+    <div class="flex flex-col space-y-4 my-auto py-8">
+      <a href="#directory-section" class="mobile-nav-item mobile-nav-link text-2xl font-display font-semibold text-gray-200 hover:text-amber-400 transition-colors">Explore Directory</a>
+      <a href="#category-pills-container" class="mobile-nav-item mobile-nav-link text-2xl font-display font-semibold text-gray-200 hover:text-amber-400 transition-colors">Categories</a>
+      <a href="#stats-section" class="mobile-nav-item mobile-nav-link text-2xl font-display font-semibold text-gray-200 hover:text-amber-400 transition-colors">Why MZG Hub</a>
+      <div class="pt-4 border-t border-white/10">
+        <button class="trigger-list-business mobile-nav-item w-full flex items-center justify-center space-x-2 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-gray-950 font-bold font-display shadow-lg shadow-amber-500/20">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>List Your Business</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Footer Info -->
+    <div class="flex items-center justify-between pt-4 border-t border-white/10 text-xs font-mono text-gray-400">
+      <span>MUZAFFARGARH, PK</span>
+      <span class="text-emerald-400 flex items-center space-x-1">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>Phase 1 Active</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       2. Apple-Style Scroll-Scrubbed Frame Animation Hero Section
+       ======================================================================= -->
+  <section id="hero-section" class="relative w-full h-screen overflow-hidden bg-[#050507]">
+    
+    <!-- Procedural 3D Canvas -->
+    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full block z-0"></canvas>
+
+    <!-- Aesthetic Radial Vignette for Razor-Sharp Text Contrast -->
+    <div class="absolute inset-0 hero-vignette pointer-events-none z-10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-44 hero-bottom-fade pointer-events-none z-10"></div>
+
+    <!-- Synchronized Kinetic Typography Overlays Container -->
+    <div class="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none px-4 sm:px-6">
+
+      <!-- ===================================================================
+           Beat 1 (0% to 30% Scroll): Headline & Scroll Indicator
+           =================================================================== -->
+      <div id="hero-beat-1" class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <!-- Live Tag Badge -->
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md mb-4 sm:mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="emerald-pulse-ring absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-gray-300">Official Digital Gateway • 2026 Edition</span>
+        </div>
+
+        <!-- Massive Bold Headline -->
+        <h1 class="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-gold-metallic select-none drop-shadow-2xl">
+          MUZAFFARGARH
+        </h1>
+
+        <!-- Luxury Subtitle -->
+        <p class="font-display text-xs sm:text-sm md:text-base tracking-[0.28em] uppercase text-gray-300/90 font-medium mt-3 sm:mt-5 max-w-2xl">
+          The City's Finest, Reimagined
+        </p>
+
+        <p class="text-xs sm:text-sm text-gray-400 mt-2 max-w-lg font-light leading-relaxed">
+          The premier verified business directory bridging the historic heart of South Punjab with modern digital commerce.
+        </p>
+
+        <!-- Animated Mouse Scroll Indicator -->
+        <div class="absolute bottom-8 sm:bottom-12 flex flex-col items-center space-y-2 select-none">
+          <div class="w-5 h-9 rounded-full border-2 border-white/20 flex items-start justify-center p-1 backdrop-blur-sm">
+            <div class="w-1.5 h-2.5 rounded-full bg-amber-400 mouse-scroll-wheel"></div>
+          </div>
+          <span class="text-[10px] font-mono tracking-widest uppercase text-gray-400">Scroll to Explore</span>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           Beat 2 (35% to 65% Scroll): Curated Local Brands & Features
+           =================================================================== -->
+      <div id="hero-beat-2" style="opacity: 0; pointer-events: none;" class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto">
+        <!-- Tag -->
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-mono uppercase tracking-wider mb-3">
+          <i data-lucide="sparkles" class="w-3 h-3"></i>
+          <span>Precision Local Directory</span>
+        </div>
+
+        <!-- Headline -->
+        <h2 class="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight">
+          CURATED LOCAL BRANDS
+        </h2>
+
+        <!-- Subtext -->
+        <p class="font-medium text-sm sm:text-lg text-emerald-400 mt-2 sm:mt-3">
+          Direct WhatsApp Connect • Verified Shops • Zero Middlemen
+        </p>
+
+        <!-- 4 Micro-feature Glass Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 w-full max-w-3xl">
+          <div class="glass-card rounded-2xl p-4 text-center">
+            <div class="w-8 h-8 mx-auto rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs font-semibold text-white">100% Verified</div>
+            <div class="text-[10px] text-gray-400 mt-0.5">District Authenticated</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 text-center">
+            <div class="w-8 h-8 mx-auto rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs font-semibold text-white">Instant WhatsApp</div>
+            <div class="text-[10px] text-gray-400 mt-0.5">One-Tap Inquiries</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 text-center">
+            <div class="w-8 h-8 mx-auto rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-2">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs font-semibold text-white">Exact Locations</div>
+            <div class="text-[10px] text-gray-400 mt-0.5">GPS & Landmarks</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 text-center">
+            <div class="w-8 h-8 mx-auto rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs font-semibold text-white">Direct Deals</div>
+            <div class="text-[10px] text-gray-400 mt-0.5">Wholesale & Retail</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           Beat 3 (70% to 95% Scroll): Climax Call-to-Action Overlay
+           =================================================================== -->
+      <div id="hero-beat-3" style="opacity: 0; pointer-events: none;" class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 max-w-3xl mx-auto">
+        <!-- Tag -->
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-mono uppercase tracking-wider mb-3">
+          <i data-lucide="compass" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Step Into The Ecosystem</span>
+        </div>
+
+        <!-- Climax Headline -->
+        <h2 class="font-display font-black text-4xl sm:text-6xl md:text-7xl text-gold-gradient tracking-tight">
+          EXPLORE THE DIRECTORY
+        </h2>
+
+        <!-- Subtext -->
+        <p class="text-sm sm:text-base text-gray-300 mt-3 max-w-xl font-light leading-relaxed">
+          Access over 500+ verified businesses across Muzaffargarh — from world-class Chaunsa orchards to traditional sweets, medical centers, and textiles.
+        </p>
+
+        <!-- Action CTAs -->
+        <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 mt-8 pointer-events-auto">
+          <a href="#directory-section" class="btn-gold-shimmer px-8 py-3.5 rounded-full text-sm font-bold text-gray-950 font-display flex items-center space-x-2 shadow-xl shadow-amber-500/25">
+            <span>Enter Directory</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+          <button class="trigger-list-business px-6 py-3.5 rounded-full text-sm font-medium text-gray-200 border border-white/15 hover:border-amber-400/50 bg-white/5 hover:bg-white/10 transition-all flex items-center space-x-2">
+            <i data-lucide="store" class="w-4 h-4 text-amber-400"></i>
+            <span>Register Your Merchant Profile</span>
+          </button>
+        </div>
+
+        <!-- Subtle Downward Kinetic Arrow Indicator -->
+        <div class="mt-8 flex flex-col items-center pointer-events-auto cursor-pointer">
+          <a href="#directory-section" class="text-amber-400/80 hover:text-amber-300 transition-colors animate-bounce p-2" aria-label="Scroll to Directory Section">
+            <i data-lucide="chevrons-down" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       Kinetic Velocity Marquee Strip
+       ======================================================================= -->
+  <div id="marquee-strip-wrapper" class="relative z-30 overflow-hidden bg-[#07080d]/90 backdrop-blur-xl border-y border-white/10 py-3.5 select-none shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+    <div id="marquee-track" class="marquee-track flex items-center whitespace-nowrap">
+      <!-- Injected and duplicated dynamically via js/app.js -->
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       3. Directory Section (Placeholder & Phase 2 Foundation)
+       ======================================================================= -->
+  <section id="directory-section" class="relative z-20 min-h-screen bg-[#050507] text-white pt-24 pb-32 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+    
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <!-- Live Business Counter Badge -->
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-mono uppercase tracking-wider mb-3">
+            <span class="relative flex h-2 w-2">
+              <span class="emerald-pulse-ring absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span id="business-counter">Showing 8 Verified Businesses in Muzaffargarh</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+            DISCOVER MUZAFFARGARH
+          </h2>
+          <p class="text-gray-400 mt-2 max-w-xl text-sm sm:text-base">
+            Verified local shops, direct WhatsApp connect, and authentic district commerce. Zero middlemen.
+          </p>
+        </div>
+
+        <!-- Verification Seal Chip -->
+        <div class="mt-4 md:mt-0 flex items-center space-x-2 bg-white/5 border border-white/10 rounded-2xl px-4 py-2.5">
+          <i data-lucide="badge-check" class="w-4 h-4 text-emerald-400"></i>
+          <span class="text-xs font-mono text-gray-300">Phase 2 Verified Registry Active</span>
+        </div>
+      </div>
+
+      <!-- Search & Filter Controls -->
+      <div class="glass-card rounded-2xl p-3 sm:p-4 mb-6">
+        <div class="relative">
+          <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+          <input
+            id="business-search"
+            type="text"
+            placeholder="Search by shop name, category, products (e.g. Pizza, Books, Jewelry, Cakes)..."
+            class="search-input-glow w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-10 py-3 text-sm text-white placeholder-gray-500 focus:outline-none"
+          >
+          <button
+            id="search-clear-btn"
+            class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-1 transition-colors"
+            title="Clear search"
+            aria-label="Clear Search Input"
+          >
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Category Filter Pills (Generated from businesses in js/data.js) -->
+      <div id="category-pills-container" class="flex items-center space-x-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <!-- Injected via js/app.js -->
+      </div>
+
+      <!-- Dynamic Business Cards Grid -->
+      <div id="business-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <!-- Injected via js/app.js -->
+      </div>
+
+      <!-- No Results Empty State -->
+      <div id="empty-state" class="hidden flex-col items-center justify-center py-20 text-center glass-card rounded-3xl mb-16 px-4">
+        <div class="w-14 h-14 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
+          <i data-lucide="search-x" class="w-7 h-7"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white">No Businesses Found</h3>
+        <p class="text-sm text-gray-400 mt-1 max-w-sm">
+          No verified businesses matched your current search and filter criteria.
+        </p>
+        <button id="reset-filters-btn" class="mt-5 btn-gold-shimmer px-6 py-2.5 rounded-full text-xs font-bold text-gray-950 font-display flex items-center space-x-2 shadow-lg shadow-amber-500/20">
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+          <span>Reset Search & Filters</span>
+        </button>
+      </div>
+
+      <!-- =======================================================================
+           Scroll-Triggered City Stats Strip ("Why Muzaffargarh Hub")
+           ======================================================================= -->
+      <section id="stats-section" class="mb-16 pt-4">
+        <div class="flex items-center space-x-2 mb-2">
+          <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+            <span>Why Muzaffargarh Hub</span>
+          </span>
+        </div>
+        <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight mb-2">
+          DISTRICT COMMERCE METRICS
+        </h3>
+        <p class="text-xs sm:text-sm text-gray-400 max-w-xl mb-8">
+          A high-trust, direct-connection commerce layer built exclusively for Muzaffargarh businesses and shoppers.
+        </p>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          
+          <!-- Stat 1: Verified Businesses -->
+          <div class="stat-card glass-card rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Directory Scale</span>
+              <div class="w-8 h-8 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="store" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div>
+              <div class="stat-counter font-display font-black text-4xl sm:text-5xl text-white tracking-tight" data-target="8" data-suffix="+">0</div>
+              <div class="text-xs sm:text-sm font-semibold text-gray-200 mt-1">Verified Local Businesses</div>
+              <div class="text-[11px] text-gray-400 mt-0.5">Hand-vetted physical shops</div>
+            </div>
+          </div>
+
+          <!-- Stat 2: Direct WhatsApp Connect -->
+          <div class="stat-card glass-card rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider">Direct Access</span>
+              <div class="w-8 h-8 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div>
+              <div class="stat-counter font-display font-black text-4xl sm:text-5xl text-emerald-400 tracking-tight" data-target="100" data-suffix="%">0</div>
+              <div class="text-xs sm:text-sm font-semibold text-gray-200 mt-1">Direct WhatsApp Connect</div>
+              <div class="text-[11px] text-gray-400 mt-0.5">One-tap merchant chat</div>
+            </div>
+          </div>
+
+          <!-- Stat 3: Zero Commission -->
+          <div class="stat-card glass-card rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono text-amber-400 uppercase tracking-wider">Fair Trade</span>
+              <div class="w-8 h-8 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="hand-coins" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div>
+              <div class="stat-counter font-display font-black text-4xl sm:text-5xl text-amber-400 tracking-tight" data-target="0" data-suffix="%">0</div>
+              <div class="text-xs sm:text-sm font-semibold text-gray-200 mt-1">Commission or Middlemen</div>
+              <div class="text-[11px] text-gray-400 mt-0.5">Direct retail & wholesale rates</div>
+            </div>
+          </div>
+
+          <!-- Stat 4: 24/7 City Access -->
+          <div class="stat-card glass-card rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Always Live</span>
+              <div class="w-8 h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div>
+              <div class="font-display font-black text-4xl sm:text-5xl text-white tracking-tight">24/7</div>
+              <div class="text-xs sm:text-sm font-semibold text-gray-200 mt-1">Muzaffargarh City Access</div>
+              <div class="text-[11px] text-gray-400 mt-0.5">Always-on digital discovery</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           Task 3: "List Your Business" Animated Glassmorphic CTA Banner
+           ======================================================================= -->
+      <div class="relative overflow-hidden rounded-3xl border border-amber-500/35 bg-gradient-to-r from-amber-500/10 via-[#0a0c14] to-emerald-500/10 p-8 sm:p-14 text-center shadow-[0_10px_50px_rgba(0,0,0,0.6)] group">
+        <!-- Ambient background glows -->
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-amber-500/25 transition-all duration-700"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/25 transition-all duration-700"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-mono uppercase tracking-wider mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Verified District Registry</span>
+          </div>
+
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+            Own a Business in Muzaffargarh?
+          </h2>
+
+          <p class="text-gray-300 text-sm sm:text-base mt-3.5 font-light leading-relaxed max-w-xl mx-auto">
+            Join Muzaffargarh's premier digital directory and get direct WhatsApp customers with zero commission.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+            <button class="trigger-list-business btn-gold-shimmer px-8 py-3.5 rounded-full text-sm font-bold text-gray-950 font-display flex items-center space-x-2 shadow-xl shadow-amber-500/25 cursor-pointer">
+              <i data-lucide="store" class="w-4 h-4"></i>
+              <span>Get Listed Today</span>
+            </button>
+            <a href="https://wa.me/923217486566?text=Assalam%20o%20Alaikum,%20I%20want%20to%20list%20my%20business%20on%20Muzaffargarh%20City%20Hub" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-full text-sm font-medium text-gray-200 border border-white/15 hover:border-emerald-400/50 hover:text-white bg-white/5 transition-all flex items-center space-x-2">
+              <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+              <span>Contact Directory Concierge</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       4. Luxury Multi-Column Footer with Interactive Category Links
+       ======================================================================= -->
+  <footer class="relative bg-[#050507] border-t border-white/10 pt-16 pb-12 px-4 sm:px-6 lg:px-8 text-gray-400 text-xs">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 mb-12">
+      
+      <!-- Column 1: Brand Logo & Verified Count -->
+      <div>
+        <div class="flex items-center space-x-3 mb-3.5">
+          <div class="relative flex items-center justify-center">
+            <img src="images/logo.png" alt="MZG HUB Logo" class="w-10 h-10 object-cover rounded-full border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.25)]">
+            <span class="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+              <span class="emerald-pulse-ring absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+          </div>
+          <span class="font-display font-bold text-xl text-white">MZG HUB</span>
+        </div>
+        <p class="text-gray-400 max-w-sm leading-relaxed text-xs sm:text-sm">
+          Muzaffargarh's premier verified business directory bridging the historic heart of South Punjab with modern digital commerce.
+        </p>
+
+        <!-- Live Verified Business Count Badge -->
+        <div class="mt-4 inline-flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-gray-300">
+          <span class="relative flex h-2 w-2">
+            <span class="emerald-pulse-ring absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span><strong id="footer-verified-count" class="text-emerald-400 font-bold">8</strong> Verified Merchants Active</span>
+        </div>
+
+        <div class="mt-3 text-[11px] font-mono text-gray-500">
+          COORDINATES: 30.0703° N, 71.1933° E • ELEVATION: 122 M
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Category Links (Interactive) -->
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4 tracking-wide uppercase">
+          Quick Categories
+        </h4>
+        <div id="footer-category-links" class="grid grid-cols-2 gap-2 text-xs">
+          <!-- Dynamically injected and synced with businesses via js/app.js -->
+        </div>
+      </div>
+
+      <!-- Column 3: Navigation Links & Rights -->
+      <div>
+        <h4 class="font-display font-semibold text-white text-sm mb-4 tracking-wide uppercase">
+          Navigation & Support
+        </h4>
+        <ul class="space-y-2.5 text-xs text-gray-400">
+          <li>
+            <a href="#" class="hover:text-amber-400 transition-colors flex items-center space-x-1.5">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-400/70"></i>
+              <span>Home (Hero Experience)</span>
+            </a>
+          </li>
+          <li>
+            <a href="#directory-section" class="hover:text-amber-400 transition-colors flex items-center space-x-1.5">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-400/70"></i>
+              <span>Verified Directory</span>
+            </a>
+          </li>
+          <li>
+            <a href="#stats-section" class="hover:text-amber-400 transition-colors flex items-center space-x-1.5">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-400/70"></i>
+              <span>Why MZG Hub (District Metrics)</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="trigger-list-business text-emerald-400 hover:text-emerald-300 transition-colors flex items-center space-x-1.5 font-semibold">
+              <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+              <span>List Your Business (Free)</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mt-6 pt-4 border-t border-white/10 text-[11px] font-mono text-gray-400 flex items-center space-x-2">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Official 2026 District Commerce Gateway</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="max-w-6xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-gray-500">
+      <p>© 2026 Muzaffargarh City Hub (MZG HUB). All rights reserved.</p>
+      <div class="flex items-center space-x-4 mt-3 sm:mt-0 font-mono text-[11px]">
+        <span>Privacy Policy</span>
+        <span>•</span>
+        <span>Terms of Service</span>
+        <span>•</span>
+        <span class="text-emerald-400">SSL Encrypted</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       Floating Back-to-Top Button
+       ======================================================================= -->
+  <button
+    id="back-to-top-btn"
+    class="fixed bottom-6 right-6 z-40 hidden items-center justify-center w-11 h-11 rounded-full glass-header border border-amber-500/30 text-amber-400 hover:text-white hover:border-amber-400 shadow-2xl shadow-black/80 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+    aria-label="Back to Top"
+    title="Back to Top"
+  >
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- =======================================================================
+       5. List Business Modal (Interactive Preview)
+       ======================================================================= -->
+  <div id="list-business-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+    <div id="list-modal-content" class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border border-amber-500/30 relative">
+      <button id="list-modal-close" class="absolute top-5 right-5 text-gray-400 hover:text-white" aria-label="Close Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center space-x-2 mb-2">
+        <span class="text-xs font-mono uppercase text-amber-400">Fast-Track Listing</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+      </div>
+
+      <h3 class="font-display font-extrabold text-2xl text-white">
+        List Your Business
+      </h3>
+      <p class="text-xs text-gray-400 mt-1">
+        Join Muzaffargarh's verified premier network. Phase 2 submissions are verified within 24 hours.
+      </p>
+
+      <form class="mt-6 space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your business registration has been received for Muzaffargarh City Hub Phase 2.'); document.getElementById('list-business-modal').classList.add('hidden');">
+        <div>
+          <label class="block text-xs font-mono text-gray-300 mb-1">Business Name</label>
+          <input type="text" required placeholder="e.g. Chenab Agro Farm or City Medix" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-mono text-gray-300 mb-1">Category</label>
+            <select class="w-full bg-[#0d0f17] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-amber-400 cursor-pointer">
+              <option>Agro & Mangoes</option>
+              <option>Dining & Sweets</option>
+              <option>Cotton & Textiles</option>
+              <option>Healthcare</option>
+              <option>Solar & Tech</option>
+              <option>Automotive</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-gray-300 mb-1">WhatsApp / Phone</label>
+            <input type="tel" required placeholder="0300-XXXXXXX" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-gray-300 mb-1">Street Address / Landmark</label>
+          <input type="text" required placeholder="e.g. Near Chowk Kutchery, Alipur Road" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-400">
+        </div>
+
+        <button type="submit" class="w-full btn-gold-shimmer py-3.5 rounded-xl text-sm font-bold text-gray-950 font-display flex items-center justify-center space-x-2 mt-4 shadow-lg shadow-amber-500/20">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>Submit for Verification</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       6. Business Detail Modal (Phase 2 & 3 Interactive Hub)
+       ======================================================================= -->
+  <div id="business-detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4">
+    <div id="business-detail-content" class="glass-card max-w-xl w-full rounded-3xl p-6 sm:p-8 border border-white/10 relative max-h-[90vh] overflow-y-auto no-scrollbar">
+      <button id="detail-modal-close" class="absolute top-5 right-5 text-gray-400 hover:text-white p-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors" aria-label="Close Details Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="detail-modal-body">
+        <!-- Populated dynamically via js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       7. Floating Copied Toast Notification
+       ======================================================================= -->
+  <div id="toast-notification" class="fixed bottom-20 right-6 z-[9999] pointer-events-none transform translate-y-12 opacity-0 transition-all duration-300 flex items-center space-x-2.5 px-4 py-2.5 rounded-2xl bg-emerald-500 text-gray-950 font-display font-bold text-xs shadow-2xl">
+    <i data-lucide="check" class="w-4 h-4 shrink-0"></i>
+    <span id="toast-message">Phone number copied to clipboard!</span>
+  </div>
+
+  <!-- =======================================================================
+       Application Scripts
+       ======================================================================= -->
+  <script src="js/data.js"></script>
+  <script src="js/canvas-hero.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
