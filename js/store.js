@@ -346,8 +346,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
         <div class="business-card flex flex-col justify-between group rounded-2xl overflow-hidden p-0" data-name="${p.name}">
           <div>
-            <!-- Product Media Header (h-48 relative overflow-hidden) -->
-            <div class="card-media-header h-48 overflow-hidden relative w-full bg-[#0c0d14]">
+            <!-- Product Media Header (h-28 on mobile, h-48 on desktop, relative overflow-hidden) -->
+            <div class="card-media-header h-28 sm:h-48 overflow-hidden relative w-full bg-[#0c0d14]">
               ${
                 p.image
                   ? `<img
@@ -364,14 +364,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 style="display: ${p.image ? 'none' : 'flex'}; background: radial-gradient(circle at 50% 45%, ${currentBusiness.accent}33 0%, rgba(13, 15, 22, 0.95) 75%), #0a0b10;"
               >
                 <div class="card-grid-pattern absolute inset-0 opacity-25 pointer-events-none"></div>
-                <div class="relative z-10 w-12 h-12 rounded-xl flex items-center justify-center border backdrop-blur-sm transition-transform duration-500 group-hover:scale-110" style="background: ${currentBusiness.accent}18; border-color: ${currentBusiness.accent}45; color: ${currentBusiness.accent}; box-shadow: 0 0 25px ${currentBusiness.accent}35;">
-                  <i data-lucide="${currentBusiness.icon}" class="w-6 h-6"></i>
+                <div class="relative z-10 w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center border backdrop-blur-sm transition-transform duration-500 group-hover:scale-110" style="background: ${currentBusiness.accent}18; border-color: ${currentBusiness.accent}45; color: ${currentBusiness.accent}; box-shadow: 0 0 25px ${currentBusiness.accent}35;">
+                  <i data-lucide="${currentBusiness.icon}" class="w-4 h-4 sm:w-6 sm:h-6"></i>
                 </div>
               </div>
 
-              <!-- Floating Price Badge on Header (electric gold) -->
-              <div class="absolute top-3 right-3 z-10">
-                <span class="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-amber-500/50 text-amber-400 font-mono font-bold text-xs shadow-lg shadow-black/80">
+              <!-- Floating Price Badge on Header (electric gold, compact on mobile) -->
+              <div class="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
+                <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black/75 backdrop-blur-md border border-amber-500/50 text-amber-400 font-mono font-bold text-[10px] sm:text-xs shadow-lg shadow-black/80">
                   ${p.price}
                 </span>
               </div>
@@ -380,28 +380,28 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#0d0f16] to-transparent pointer-events-none z-10"></div>
             </div>
 
-            <!-- Card Body -->
-            <div class="p-5">
-              <h3 class="font-display font-bold text-lg text-white group-hover:text-amber-400 transition-colors line-clamp-1">
+            <!-- Card Body (Compact p-2.5 on mobile, p-5 on desktop) -->
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-display font-bold text-xs sm:text-lg text-white group-hover:text-amber-400 transition-colors line-clamp-1">
                 ${p.name}
               </h3>
-              <p class="text-xs text-gray-400 mt-1.5 line-clamp-2 leading-relaxed">
+              <p class="text-[10px] sm:text-xs text-gray-400 mt-1 sm:mt-1.5 line-clamp-2 leading-relaxed">
                 ${p.description}
               </p>
             </div>
           </div>
 
-          <!-- Direct Order on WhatsApp Button -->
-          <div class="px-5 pb-5 pt-1">
+          <!-- Direct Order on WhatsApp Button (Compact on mobile) -->
+          <div class="px-2.5 pb-2.5 pt-1 sm:px-5 sm:pb-5 sm:pt-1">
             <a
               href="${waOrderUrl}"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-whatsapp-sweep w-full py-2.5 px-3 rounded-xl text-xs font-bold font-display flex items-center justify-center space-x-2 shadow-md shadow-emerald-950/40 cursor-pointer"
+              class="btn-whatsapp-sweep w-full py-1.5 sm:py-2.5 px-2 sm:px-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold font-display flex items-center justify-center space-x-1 sm:space-x-2 shadow-md shadow-emerald-950/40 cursor-pointer"
               aria-label="Order ${p.name} on WhatsApp"
             >
-              <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
-              <span>Order on WhatsApp</span>
+              <i data-lucide="message-circle" class="w-3 h-3 sm:w-4 sm:h-4 shrink-0"></i>
+              <span>Order</span><span class="hidden sm:inline">&nbsp;on WhatsApp</span>
             </a>
           </div>
         </div>
@@ -427,6 +427,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Cursor Spotlight & Tilt on Product Cards
   function attachCardTiltAndSpotlight() {
+    if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
+      return; // Touch device, skip 3D tilt calculations to save CPU/battery
+    }
     const cards = document.querySelectorAll('.business-card');
     cards.forEach((card) => {
       card.addEventListener('mousemove', (e) => {

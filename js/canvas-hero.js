@@ -62,14 +62,17 @@
     };
   }
 
+  let activeMobileScale = 1.0;
+
   function project(p, cx, cy, fov) {
-    const depth = p.z + fov;
+    const s = activeMobileScale;
+    const depth = (p.z * s) + fov;
     if (depth <= 10) return null; // Behind camera
     const scale = fov / depth;
     return {
-      x: cx + p.x * scale,
-      y: cy + p.y * scale,
-      scale: scale,
+      x: cx + (p.x * s) * scale,
+      y: cy + (p.y * s) * scale,
+      scale: scale * s,
       z: p.z
     };
   }
@@ -232,7 +235,8 @@
     const h = canvasState.height;
     const cx = w / 2;
     const cy = h / 2;
-    const fov = Math.max(w, h) * 0.72;
+    activeMobileScale = w < 768 ? 0.6 : 1.0;
+    const fov = Math.max(w, h) * (w < 768 ? 0.66 : 0.72);
     const frame = canvasState.frame; // 0 to 180
     const idle = canvasState.idleTime;
 

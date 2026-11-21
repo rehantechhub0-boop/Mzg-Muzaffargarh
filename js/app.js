@@ -520,10 +520,10 @@ document.addEventListener('DOMContentLoaded', () => {
           : '';
 
         return `
-        <article class="business-card flex flex-col justify-between group" data-id="${b.id}">
+        <article class="business-card flex flex-col justify-between group rounded-2xl overflow-hidden p-0" data-id="${b.id}">
           <div>
-            <!-- Top Media Header (16:9 ratio, h-44, overflow-hidden, relative - Links to Storefront) -->
-            <a href="store.html?id=${b.id}" class="card-media-header block h-44 overflow-hidden relative w-full bg-[#0c0d14] cursor-pointer" title="Visit ${b.name} Storefront">
+            <!-- Top Media Header (16:9 ratio, h-28 on mobile, h-44 on desktop, overflow-hidden, relative - Links to Storefront) -->
+            <a href="store.html?id=${b.id}" class="card-media-header block h-28 sm:h-44 overflow-hidden relative w-full bg-[#0c0d14] cursor-pointer" title="Visit ${b.name} Storefront">
               ${
                 b.image
                   ? `<img
@@ -540,73 +540,73 @@ document.addEventListener('DOMContentLoaded', () => {
                 style="display: ${b.image ? 'none' : 'flex'}; background: radial-gradient(circle at 50% 45%, ${b.accent}33 0%, rgba(13, 15, 22, 0.95) 75%), #0a0b10;"
               >
                 <div class="card-grid-pattern absolute inset-0 opacity-25 pointer-events-none"></div>
-                <div class="relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center border backdrop-blur-sm transition-transform duration-500 group-hover:scale-110" style="background: ${b.accent}18; border-color: ${b.accent}45; color: ${b.accent}; box-shadow: 0 0 28px ${b.accent}35;">
-                  <i data-lucide="${b.icon}" class="w-7 h-7"></i>
+                <div class="relative z-10 w-9 h-9 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center border backdrop-blur-sm transition-transform duration-500 group-hover:scale-110" style="background: ${b.accent}18; border-color: ${b.accent}45; color: ${b.accent}; box-shadow: 0 0 28px ${b.accent}35;">
+                  <i data-lucide="${b.icon}" class="w-4 h-4 sm:w-7 sm:h-7"></i>
                 </div>
               </div>
 
               <!-- Top Glassmorphic Badges Overlay -->
-              <div class="absolute inset-x-0 top-0 p-3.5 flex items-center justify-between pointer-events-none z-10">
-                <span class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-semibold font-mono backdrop-blur-md" style="background: ${b.accent}22; border: 1px solid ${b.accent}55; color: ${b.accent}; box-shadow: 0 4px 14px rgba(0,0,0,0.45);">
-                  <i data-lucide="${b.icon}" class="w-3.5 h-3.5"></i>
-                  <span>${b.category}</span>
+              <div class="absolute inset-x-0 top-0 p-2 sm:p-3.5 flex items-center justify-between pointer-events-none z-10">
+                <span class="inline-flex items-center space-x-1 sm:space-x-1.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-semibold font-mono backdrop-blur-md" style="background: ${b.accent}22; border: 1px solid ${b.accent}55; color: ${b.accent}; box-shadow: 0 4px 14px rgba(0,0,0,0.45);">
+                  <i data-lucide="${b.icon}" class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5"></i>
+                  <span class="truncate max-w-[65px] sm:max-w-none">${b.category}</span>
                 </span>
 
-                <span class="px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-gray-200 text-[11px] font-mono shadow-md">
+                <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-gray-200 text-[9px] sm:text-[11px] font-mono shadow-md truncate max-w-[70px] sm:max-w-none">
                   ${b.priceRange}
                 </span>
               </div>
 
               <!-- Bottom Vignette Blend into Card Body -->
-              <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#0d0f16] to-transparent pointer-events-none z-10"></div>
+              <div class="absolute inset-x-0 bottom-0 h-8 sm:h-10 bg-gradient-to-t from-[#0d0f16] to-transparent pointer-events-none z-10"></div>
             </a>
 
-            <!-- Card Content Body -->
-            <div class="p-5 sm:p-6">
+            <!-- Card Content Body (Compact p-2.5 on mobile, p-5 on desktop) -->
+            <div class="p-2.5 sm:p-5">
               <!-- Business Name (Links to Storefront) -->
-              <a href="store.html?id=${b.id}" class="inline-block group-hover:text-amber-400 transition-colors">
-                <h3 class="font-display font-bold text-xl text-white group-hover:text-amber-400 transition-colors">
+              <a href="store.html?id=${b.id}" class="inline-block group-hover:text-amber-400 transition-colors w-full">
+                <h3 class="font-display font-bold text-sm sm:text-xl text-white group-hover:text-amber-400 transition-colors line-clamp-1">
                   ${b.name}
                 </h3>
               </a>
 
               <!-- Contact Person Tag -->
-              ${contactPersonHtml}
+              ${b.contactPerson ? `<div class="inline-flex items-center space-x-1 text-[10px] sm:text-xs font-mono text-amber-400/90 mt-0.5 sm:mt-1 truncate max-w-full"><i data-lucide="user-check" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400 shrink-0"></i><span class="truncate">${b.contactPerson}</span></div>` : ''}
 
-              <!-- Exact Address with Map Pin -->
-              <div class="flex items-start space-x-1.5 text-xs text-gray-400 mt-2.5">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5"></i>
-                <span class="line-clamp-2 leading-relaxed">${b.address}</span>
+              <!-- Exact Address with Map Pin (1-line clamp on mobile) -->
+              <div class="flex items-start space-x-1 sm:space-x-1.5 text-[11px] sm:text-xs text-gray-400 mt-1 sm:mt-2.5">
+                <i data-lucide="map-pin" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400 shrink-0 mt-0.5"></i>
+                <span class="line-clamp-1 leading-relaxed">${b.address}</span>
               </div>
 
-              <!-- Product Pills -->
-              <div class="flex flex-wrap items-center gap-1.5 mt-4 pt-4 border-t border-white/10">
+              <!-- Product Pills (Hidden on mobile < 640px to keep 2-column cards clean) -->
+              <div class="flex-wrap items-center gap-1.5 mt-3 pt-3 border-t border-white/10 hidden sm:flex">
                 ${productTagsHtml}
                 ${overflowBadge}
               </div>
             </div>
           </div>
 
-          <!-- Bottom Action Bar (Mandatory WhatsApp & Storefront) -->
-          <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-2 flex items-center space-x-2">
+          <!-- Bottom Action Bar (Compact on mobile) -->
+          <div class="px-2.5 pb-2.5 pt-1 sm:px-5 sm:pb-5 sm:pt-2 flex items-center space-x-1.5 sm:space-x-2 border-t border-white/10">
             <a
               href="${waUrl}"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-whatsapp-sweep flex-1 py-2.5 px-3 rounded-xl text-xs font-bold font-display flex items-center justify-center space-x-2 shadow-md shadow-emerald-950/40 cursor-pointer"
+              class="btn-whatsapp-sweep flex-1 py-1.5 sm:py-2.5 px-1.5 sm:px-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold font-display flex items-center justify-center space-x-1 sm:space-x-1.5 shadow-md shadow-emerald-950/40 cursor-pointer"
               aria-label="Connect via WhatsApp with ${b.name}"
             >
-              <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
-              <span class="truncate">WhatsApp: ${b.phoneDisplay}</span>
+              <i data-lucide="message-circle" class="w-3 h-3 sm:w-4 sm:h-4 shrink-0"></i>
+              <span class="truncate">${b.phoneDisplay}</span>
             </a>
 
             <a
               href="store.html?id=${b.id}"
-              class="py-2.5 px-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-400/40 text-gray-200 hover:text-white text-xs font-semibold flex items-center justify-center space-x-1.5 transition-all cursor-pointer whitespace-nowrap"
+              class="py-1.5 sm:py-2.5 px-2 sm:px-3.5 rounded-lg sm:rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-400/40 text-gray-200 hover:text-white text-[10px] sm:text-xs font-semibold flex items-center justify-center space-x-1 transition-all cursor-pointer whitespace-nowrap shrink-0"
               title="View Store & Full Products"
             >
-              <i data-lucide="store" class="w-3.5 h-3.5 text-amber-400"></i>
-              <span>View Store</span>
+              <i data-lucide="store" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400"></i>
+              <span>Store</span>
             </a>
           </div>
         </article>
@@ -662,6 +662,9 @@ document.addEventListener('DOMContentLoaded', () => {
    * Interactive Cursor Spotlight & Subtle 3D Perspective Tilt
    */
   function attachCardTiltAndSpotlight() {
+    if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
+      return; // Touch device, skip 3D tilt calculations to save CPU/battery
+    }
     const cards = document.querySelectorAll('.business-card');
     cards.forEach((card) => {
       card.addEventListener('mousemove', (e) => {

@@ -25,6 +25,7 @@
 }
 
 html {
+  overflow-x: hidden;
   background-color: var(--color-bg-base);
   color: #f3f4f6;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -466,5 +467,20 @@ html.lenis, html.lenis body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Touch Devices: Disable 3D tilt and cursor spotlights for optimal battery & smooth 60fps */
+@media (hover: none) {
+  .business-card {
+    transform: none !important;
+    transition: transform 0.15s ease !important;
+  }
+  .business-card:hover {
+    transform: none !important;
+  }
+  .business-card::before,
+  .business-card::after {
+    display: none !important;
   }
 }
