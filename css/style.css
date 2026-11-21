@@ -484,3 +484,11 @@ html.lenis, html.lenis body {
     display: none !important;
   }
 }
+
+/* Polish for 2-column mobile business cards */
+@media (max-width: 639px) {
+  .business-card {
+    border-radius: 1rem;
+    background: rgba(13, 13, 18, 0.92);
+  }
+}

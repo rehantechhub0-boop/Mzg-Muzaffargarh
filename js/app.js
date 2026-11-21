@@ -612,20 +612,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
 
-              <!-- Top Glassmorphic Badges Overlay -->
-              <div class="absolute inset-x-0 top-0 p-2 sm:p-3.5 flex items-center justify-between pointer-events-none z-10">
-                <span class="inline-flex items-center space-x-1 sm:space-x-1.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-semibold font-mono backdrop-blur-md" style="background: ${b.accent}22; border: 1px solid ${b.accent}55; color: ${b.accent}; box-shadow: 0 4px 14px rgba(0,0,0,0.45);">
+              <!-- Top Glassmorphic Badges Overlay: Only Category on Mobile; Price on Desktop -->
+              <div class="absolute inset-x-0 top-0 p-2 sm:p-3 flex items-center justify-between pointer-events-none z-10">
+                <span class="inline-flex items-center space-x-1 sm:space-x-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-semibold font-mono backdrop-blur-md" style="background: ${b.accent}25; border: 1px solid ${b.accent}55; color: ${b.accent}; box-shadow: 0 4px 14px rgba(0,0,0,0.45);">
                   <i data-lucide="${b.icon}" class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5"></i>
-                  <span class="truncate max-w-[65px] sm:max-w-none">${b.category}</span>
+                  <span class="truncate">${b.category}</span>
                 </span>
 
-                <span class="px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-gray-200 text-[9px] sm:text-[11px] font-mono shadow-md truncate max-w-[70px] sm:max-w-none">
+                <span class="hidden sm:inline-flex px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-gray-200 text-[10px] sm:text-[11px] font-mono shadow-md truncate">
                   ${b.priceRange}
                 </span>
               </div>
 
-              <!-- Bottom Vignette Blend into Card Body -->
-              <div class="absolute inset-x-0 bottom-0 h-8 sm:h-10 bg-gradient-to-t from-[#0d0f16] to-transparent pointer-events-none z-10"></div>
+              <!-- Subtle Dark Bottom Gradient over Card Cover Image -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-transparent to-black/30 pointer-events-none z-10"></div>
             </a>
 
             <!-- Card Content Body (Compact p-2.5 on mobile, p-5 on desktop) -->
@@ -636,6 +636,11 @@ document.addEventListener('DOMContentLoaded', () => {
                   ${b.name}
                 </h3>
               </a>
+
+              <!-- Price Range Cleanly Displayed in Electric Gold -->
+              <div class="text-[11px] sm:text-xs font-semibold text-amber-400 mt-0.5 sm:mt-1 truncate font-mono">
+                ${b.priceRange}
+              </div>
 
               <!-- Contact Person Tag -->
               ${b.contactPerson ? `<div class="inline-flex items-center space-x-1 text-[10px] sm:text-xs font-mono text-amber-400/90 mt-0.5 sm:mt-1 truncate max-w-full"><i data-lucide="user-check" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400 shrink-0"></i><span class="truncate">${b.contactPerson}</span></div>` : ''}
@@ -660,11 +665,12 @@ document.addEventListener('DOMContentLoaded', () => {
               href="${waUrl}"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-whatsapp-sweep flex-1 py-1.5 sm:py-2.5 px-1.5 sm:px-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold font-display flex items-center justify-center space-x-1 sm:space-x-1.5 shadow-md shadow-emerald-950/40 cursor-pointer"
+              class="btn-whatsapp-sweep flex-1 py-1.5 sm:py-2.5 px-2 sm:px-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold font-display flex items-center justify-center space-x-1 sm:space-x-1.5 shadow-md shadow-emerald-950/40 cursor-pointer"
               aria-label="Connect via WhatsApp with ${b.name}"
             >
-              <i data-lucide="message-circle" class="w-3 h-3 sm:w-4 sm:h-4 shrink-0"></i>
-              <span class="truncate">${b.phoneDisplay}</span>
+              <i data-lucide="message-circle" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"></i>
+              <span class="sm:hidden">Chat</span>
+              <span class="hidden sm:inline truncate">${b.phoneDisplay}</span>
             </a>
 
             <a

@@ -13,7 +13,7 @@ const businesses = [
     name: "She Jewelers",
     category: "Jewelry",
     icon: "gem",
-    image: null, // e.g., "images/she-jewelers.jpg"
+    image: "images/she-jewelers.jpg",
     contactPerson: null,
     phoneDisplay: "0321-7486566",
     whatsapp: "923217486566",
@@ -64,7 +64,7 @@ const businesses = [
     name: "Time Book Center",
     category: "Books",
     icon: "book-open",
-    image: null, // e.g., "images/time-book-center.jpg"
+    image: "images/time-book-center.jpg",
     contactPerson: "Ahmer",
     phoneDisplay: "0332-8064376",
     whatsapp: "923328064376",
@@ -115,7 +115,7 @@ const businesses = [
     name: "She Purse House",
     category: "Fashion",
     icon: "shopping-bag",
-    image: null, // e.g., "images/she-purse-house.jpg"
+    image: "images/she-purse-house.jpg",
     contactPerson: null,
     phoneDisplay: "0300-0791699",
     whatsapp: "923000791699",
@@ -166,7 +166,7 @@ const businesses = [
     name: "Flavor Bazar Pizza Shop",
     category: "Food",
     icon: "pizza",
-    image: null, // e.g., "images/flavor-bazar.jpg"
+    image: "images/flavor-bazar.jpg",
     contactPerson: "Hassnain",
     phoneDisplay: "0326-0861111",
     whatsapp: "923260861111",
@@ -241,7 +241,7 @@ const businesses = [
     name: "Aliza Cake",
     category: "Bakery",
     icon: "cake",
-    image: null, // e.g., "images/aliza-cake.jpg"
+    image: "images/aliza-cake.jpg",
     contactPerson: null,
     phoneDisplay: "0306-1919029",
     whatsapp: "923061919029",
@@ -292,7 +292,7 @@ const businesses = [
     name: "Anmol Beauty Parlor",
     category: "Beauty",
     icon: "sparkles",
-    image: null, // e.g., "images/anmol-parlor.jpg"
+    image: "images/anmol-beauty.jpg",
     contactPerson: null,
     phoneDisplay: "0315-0626698",
     whatsapp: "923150626698",
@@ -343,7 +343,7 @@ const businesses = [
     name: "Mohsin Lace Center",
     category: "Tailoring",
     icon: "scissors",
-    image: null, // e.g., "images/mohsin-lace.jpg"
+    image: "images/mohsin-lace.jpg",
     contactPerson: null,
     phoneDisplay: "0303-4637988",
     whatsapp: "923034637988",
@@ -394,7 +394,7 @@ const businesses = [
     name: "Posh Baby Garments",
     category: "Kids",
     icon: "shirt",
-    image: null, // e.g., "images/posh-baby.jpg"
+    image: "images/posh-baby.jpg",
     contactPerson: null,
     phoneDisplay: "0315-5500888",
     whatsapp: "923155500888",
