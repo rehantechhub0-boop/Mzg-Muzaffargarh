@@ -596,9 +596,9 @@ document.addEventListener('DOMContentLoaded', () => {
                   ? `<img
                        src="${b.image}"
                        alt="${b.name}"
-                       loading="lazy"
-                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                       onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+                       decoding="async"
+                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 block"
+                       onerror="this.style.display='none'; const fb = this.parentElement.querySelector('.card-fallback-banner'); if(fb) { fb.style.display='flex'; fb.classList.remove('hidden'); }"
                      >`
                   : ''
               }

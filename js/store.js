@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                src="${currentBusiness.image}"
                alt="${currentBusiness.name}"
                class="w-full h-full object-cover"
-               onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+               onerror="this.style.display='none'; const fb = this.parentElement.querySelector('.card-fallback-banner'); if(fb) { fb.style.display='flex'; fb.classList.remove('hidden'); }"
              >`
           : ''
       }
