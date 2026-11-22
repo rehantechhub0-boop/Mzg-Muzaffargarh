@@ -7,18 +7,27 @@
 (function () {
   'use strict';
 
-  // Master State
+  // Device capability check (low-core or mobile viewport)
+  function detectLowEndDevice() {
+    const cores = navigator.hardwareConcurrency || 4;
+    return Boolean(cores <= 4 || window.innerWidth < 768);
+  }
+  let isLowEndDevice = detectLowEndDevice();
+
+  // Master State (Capped at DPR 1.5 to prevent GPU fill-rate exhaustion on mobile)
   const canvasState = {
     frame: 0,
     idleTime: 0,
     width: window.innerWidth,
     height: window.innerHeight,
-    dpr: Math.min(window.devicePixelRatio || 1, 2)
+    dpr: Math.min(window.devicePixelRatio || 1, 1.5)
   };
 
   let canvas = null;
   let ctx = null;
   let animFrameId = null;
+  let isHeroVisible = true;
+  let isLoopRunning = false;
 
   // 3D Geometry Containers
   let gyroscopeRings = [];
@@ -101,11 +110,14 @@
     horizonGridLines = [];
     horizonEmbers = [];
 
+    // Adaptive density scaling for low-core / mobile devices (~45% reduction)
+    const densityFactor = isLowEndDevice ? 0.55 : 1.0;
+
     // --- 1. Gyroscope Rings (Phase 1) ---
     const ringConfigs = [
-      { radius: 260, points: 64, tiltX: 0.45, tiltZ: 0.25, color: '#f59e0b', width: 1.8 },
-      { radius: 210, points: 54, tiltX: -0.6, tiltZ: -0.35, color: '#fbbf24', width: 1.4 },
-      { radius: 165, points: 44, tiltX: 0.85, tiltZ: -0.5, color: '#10b981', width: 1.6 }
+      { radius: 260, points: Math.max(28, Math.round(64 * densityFactor)), tiltX: 0.45, tiltZ: 0.25, color: '#f59e0b', width: 1.8 },
+      { radius: 210, points: Math.max(24, Math.round(54 * densityFactor)), tiltX: -0.6, tiltZ: -0.35, color: '#fbbf24', width: 1.4 },
+      { radius: 165, points: Math.max(20, Math.round(44 * densityFactor)), tiltX: 0.85, tiltZ: -0.5, color: '#10b981', width: 1.6 }
     ];
 
     ringConfigs.forEach((cfg, rIdx) => {
@@ -133,8 +145,8 @@
 
     // --- 2. Wireframe Sphere Core (Phase 1) ---
     const sphereRadius = 115;
-    const lats = 7;
-    const lons = 12;
+    const lats = isLowEndDevice ? 5 : 7;
+    const lons = isLowEndDevice ? 8 : 12;
 
     for (let i = 0; i <= lats; i++) {
       const latAngle = (i / lats) * Math.PI - Math.PI / 2; // -PI/2 to PI/2
@@ -173,8 +185,8 @@
       }
     }
 
-    // --- 3. Warp Particles & City Nodes (Phase 2) ---
-    const totalWarp = 420;
+    // --- 3. Warp Particles & City Nodes (Phase 2 - Reduced ~45% on low-end/mobile) ---
+    const totalWarp = isLowEndDevice ? 230 : 420;
     for (let i = 0; i < totalWarp; i++) {
       // Cylinder distribution around camera path
       const angle = Math.random() * Math.PI * 2;
@@ -203,7 +215,7 @@
     ];
 
     // --- 5. Luminous Horizon Perspective Grid (Phase 3) ---
-    const gridRays = 22;
+    const gridRays = isLowEndDevice ? 14 : 22;
     for (let i = 0; i <= gridRays; i++) {
       const rayFactor = (i / gridRays) * 2 - 1; // -1 to +1
       horizonGridLines.push({
@@ -213,7 +225,8 @@
     }
 
     // Horizon Embers
-    for (let i = 0; i < 60; i++) {
+    const totalEmbers = isLowEndDevice ? 30 : 60;
+    for (let i = 0; i < totalEmbers; i++) {
       horizonEmbers.push({
         x: (Math.random() - 0.5) * 1400,
         y: 120 + Math.random() * 260,
@@ -333,8 +346,10 @@
         // Connect ring loop
         ctx.strokeStyle = ring.config.color;
         ctx.lineWidth = ring.config.width;
-        ctx.shadowColor = ring.config.color;
-        ctx.shadowBlur = 8;
+        if (!isLowEndDevice) {
+          ctx.shadowColor = ring.config.color;
+          ctx.shadowBlur = 8;
+        }
         ctx.beginPath();
         let first = true;
         projRingPoints.forEach(({ proj }) => {
@@ -350,7 +365,9 @@
           ctx.lineTo(projRingPoints[0].proj.x, projRingPoints[0].proj.y);
         }
         ctx.stroke();
-        ctx.shadowBlur = 0; // reset
+        if (!isLowEndDevice) {
+          ctx.shadowBlur = 0; // reset
+        }
 
         // Draw ring tick markers and glowing satellites
         projRingPoints.forEach(({ proj, pt }) => {
@@ -438,7 +455,7 @@
 
       // Constellation Network Mesh (Interconnecting nearby warp nodes)
       ctx.lineWidth = 0.8;
-      const sampleCount = Math.min(projectedWarp.length, 120);
+      const sampleCount = isLowEndDevice ? Math.min(projectedWarp.length, 60) : Math.min(projectedWarp.length, 120);
       for (let i = 0; i < sampleCount; i++) {
         for (let j = i + 1; j < sampleCount; j++) {
           const p1 = projectedWarp[i].proj;
@@ -541,13 +558,17 @@
 
       ctx.strokeStyle = horizonLineGrad;
       ctx.lineWidth = 2.0;
-      ctx.shadowColor = '#fbbf24';
-      ctx.shadowBlur = 14;
+      if (!isLowEndDevice) {
+        ctx.shadowColor = '#fbbf24';
+        ctx.shadowBlur = 14;
+      }
       ctx.beginPath();
       ctx.moveTo(0, horizonY);
       ctx.lineTo(w, horizonY);
       ctx.stroke();
-      ctx.shadowBlur = 0;
+      if (!isLowEndDevice) {
+        ctx.shadowBlur = 0;
+      }
 
       // 3. Perspective Terrain Grid Lines (Radiating toward viewer)
       const gridProgression = ((frame - 120) * 0.04 + idle * 0.15) % 1;
@@ -597,24 +618,59 @@
 
   /**
    * Continuous Animation Loop
-   * Maintains gentle ambient breathing even when scroll is paused
+   * Automatically pauses when the hero section scrolls out of view via IntersectionObserver
    */
   function startLoop() {
+    isLoopRunning = true;
     function tick() {
+      if (!isHeroVisible) {
+        isLoopRunning = false;
+        return;
+      }
       canvasState.idleTime += 0.016; // ~60fps
       render();
       animFrameId = requestAnimationFrame(tick);
     }
     cancelAnimationFrame(animFrameId);
-    tick();
+    animFrameId = requestAnimationFrame(tick);
   }
 
   /**
-   * Handle Resize with HiDPI support
+   * IntersectionObserver: Automatically stops requestAnimationFrame when hero scrolls out of view
+   */
+  function setupVisibilityObserver() {
+    const heroSection = document.getElementById('hero-section');
+    if (!heroSection || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isHeroVisible = entry.isIntersecting;
+          if (isHeroVisible) {
+            if (!isLoopRunning) {
+              startLoop();
+            }
+          } else {
+            if (isLoopRunning) {
+              cancelAnimationFrame(animFrameId);
+              isLoopRunning = false;
+            }
+          }
+        });
+      },
+      { root: null, rootMargin: '100px 0px', threshold: 0 }
+    );
+
+    observer.observe(heroSection);
+  }
+
+  /**
+   * Handle Resize with DPR Capping & Low-Core Adaptation
    */
   function handleResize() {
     if (!canvas) return;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    isLowEndDevice = detectLowEndDevice();
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     canvasState.dpr = dpr;
     canvasState.width = window.innerWidth;
     canvasState.height = window.innerHeight;
@@ -627,10 +683,8 @@
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
 
-    // Initialize scene data if not built yet
-    if (warpParticles.length === 0) {
-      buildSceneData();
-    }
+    // Rebuild scene data based on updated viewport / density factor
+    buildSceneData();
     render();
   }
 
@@ -744,6 +798,7 @@
 
     startLoop();
     setupScrollTrigger();
+    setupVisibilityObserver();
   }
 
   // Expose globally

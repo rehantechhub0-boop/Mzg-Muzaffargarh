@@ -212,6 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
           ? `<img
                src="${currentBusiness.image}"
                alt="${currentBusiness.name}"
+               loading="lazy"
+               decoding="async"
                class="w-full h-full object-cover"
                onerror="this.style.display='none'; const fb = this.parentElement.querySelector('.card-fallback-banner'); if(fb) { fb.style.display='flex'; fb.classList.remove('hidden'); }"
              >`
@@ -354,6 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
                        src="${p.image}"
                        alt="${p.name}"
                        loading="lazy"
+                       decoding="async"
                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                        onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
                      >`
@@ -364,14 +367,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 style="display: ${p.image ? 'none' : 'flex'}; background: radial-gradient(circle at 50% 45%, ${currentBusiness.accent}33 0%, rgba(13, 15, 22, 0.95) 75%), #0a0b10;"
               >
                 <div class="card-grid-pattern absolute inset-0 opacity-25 pointer-events-none"></div>
-                <div class="relative z-10 w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center border backdrop-blur-sm transition-transform duration-500 group-hover:scale-110" style="background: ${currentBusiness.accent}18; border-color: ${currentBusiness.accent}45; color: ${currentBusiness.accent}; box-shadow: 0 0 25px ${currentBusiness.accent}35;">
+                <div class="relative z-10 w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center border transition-transform duration-500 group-hover:scale-110" style="background: ${currentBusiness.accent}18; border-color: ${currentBusiness.accent}45; color: ${currentBusiness.accent}; box-shadow: 0 0 25px ${currentBusiness.accent}35;">
                   <i data-lucide="${currentBusiness.icon}" class="w-4 h-4 sm:w-6 sm:h-6"></i>
                 </div>
               </div>
 
               <!-- Floating Price Badge on Header (electric gold, compact on mobile) -->
               <div class="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
-                <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black/75 backdrop-blur-md border border-amber-500/50 text-amber-400 font-mono font-bold text-[10px] sm:text-xs shadow-lg shadow-black/80">
+                <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black/85 border border-amber-500/50 text-amber-400 font-mono font-bold text-[10px] sm:text-xs shadow-lg shadow-black/80">
                   ${p.price}
                 </span>
               </div>

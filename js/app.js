@@ -596,6 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   ? `<img
                        src="${b.image}"
                        alt="${b.name}"
+                       loading="lazy"
                        decoding="async"
                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 block"
                        onerror="this.style.display='none'; const fb = this.parentElement.querySelector('.card-fallback-banner'); if(fb) { fb.style.display='flex'; fb.classList.remove('hidden'); }"
@@ -607,19 +608,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 style="display: ${b.image ? 'none' : 'flex'}; background: radial-gradient(circle at 50% 45%, ${b.accent}33 0%, rgba(13, 15, 22, 0.95) 75%), #0a0b10;"
               >
                 <div class="card-grid-pattern absolute inset-0 opacity-25 pointer-events-none"></div>
-                <div class="relative z-10 w-9 h-9 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center border backdrop-blur-sm transition-transform duration-500 group-hover:scale-110" style="background: ${b.accent}18; border-color: ${b.accent}45; color: ${b.accent}; box-shadow: 0 0 28px ${b.accent}35;">
+                <div class="relative z-10 w-9 h-9 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center border transition-transform duration-500 group-hover:scale-110" style="background: ${b.accent}18; border-color: ${b.accent}45; color: ${b.accent}; box-shadow: 0 0 28px ${b.accent}35;">
                   <i data-lucide="${b.icon}" class="w-4 h-4 sm:w-7 sm:h-7"></i>
                 </div>
               </div>
 
-              <!-- Top Glassmorphic Badges Overlay: Only Category on Mobile; Price on Desktop -->
+              <!-- Top Badges Overlay: Only Category on Mobile; Price on Desktop -->
               <div class="absolute inset-x-0 top-0 p-2 sm:p-3 flex items-center justify-between pointer-events-none z-10">
-                <span class="inline-flex items-center space-x-1 sm:space-x-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-semibold font-mono backdrop-blur-md" style="background: ${b.accent}25; border: 1px solid ${b.accent}55; color: ${b.accent}; box-shadow: 0 4px 14px rgba(0,0,0,0.45);">
+                <span class="inline-flex items-center space-x-1 sm:space-x-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-semibold font-mono" style="background: rgba(10, 11, 16, 0.88); border: 1px solid ${b.accent}55; color: ${b.accent}; box-shadow: 0 4px 14px rgba(0,0,0,0.45);">
                   <i data-lucide="${b.icon}" class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5"></i>
                   <span class="truncate">${b.category}</span>
                 </span>
 
-                <span class="hidden sm:inline-flex px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-gray-200 text-[10px] sm:text-[11px] font-mono shadow-md truncate">
+                <span class="hidden sm:inline-flex px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-black/85 border border-white/15 text-gray-200 text-[10px] sm:text-[11px] font-mono shadow-md truncate">
                   ${b.priceRange}
                 </span>
               </div>
@@ -810,6 +811,8 @@ document.addEventListener('DOMContentLoaded', () => {
            <img
              src="${biz.image}"
              alt="${biz.name}"
+             loading="lazy"
+             decoding="async"
              class="w-full h-full object-cover"
              onerror="this.parentElement.style.display='none';"
            >

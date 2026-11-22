@@ -119,9 +119,7 @@ html.lenis, html.lenis body {
 }
 
 .glass-card {
-  background: rgba(14, 15, 22, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(14, 14, 19, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
@@ -268,18 +266,15 @@ html.lenis, html.lenis body {
   scrollbar-width: none;
 }
 
-/* Luxury Interactive Business Card */
+/* Luxury Interactive Business Card (Optimized: zero backdrop-filter blur on repeating cards) */
 .business-card {
   position: relative;
-  background: rgba(13, 15, 22, 0.75);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(14, 14, 19, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1.25rem;
   overflow: hidden;
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
   transform-style: preserve-3d;
-  will-change: transform;
 }
 
 /* Dynamic Radial Cursor Spotlight Border */
@@ -329,6 +324,7 @@ html.lenis, html.lenis body {
 }
 
 .business-card:hover {
+  will-change: transform;
   box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.8), 0 0 28px rgba(245, 158, 11, 0.12);
   border-color: rgba(245, 158, 11, 0.3);
 }
@@ -489,6 +485,6 @@ html.lenis, html.lenis body {
 @media (max-width: 639px) {
   .business-card {
     border-radius: 1rem;
-    background: rgba(13, 13, 18, 0.92);
+    background: rgba(14, 14, 19, 0.96);
   }
 }
