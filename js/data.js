@@ -13,12 +13,12 @@ const businesses = [
     "name": "She Jewelers",
     "category": "Jewelry",
     "icon": "gem",
-    "image": "images/she-jewelers.jpg",
+    "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.06 PM (1).jpeg",
     "contactPerson": null,
     "phoneDisplay": "0321-7486566",
     "whatsapp": "923217486566",
     "address": "Hassan Plaza, Shop #5, 1st Floor, Muzaffargarh",
-    "priceRange": "Rs. 200 – Rs. 20,000",
+    "priceRange": "Rs. 200 \u2013 Rs. 20,000",
     "accent": "#f59e0b",
     "products": [
       {
@@ -29,31 +29,31 @@ const businesses = [
       },
       {
         "name": "Grand Artificial Jewelry Showcase Set",
-        "price": "Rs. 4,500 – Rs. 22,000",
+        "price": "Rs. 4,500 \u2013 Rs. 22,000",
         "description": "Complete royal gold-plated artificial set with multilayer necklace, earrings, and matching forehead ornaments.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.11.55 PM (1).jpeg"
       },
       {
         "name": "Luxury Gold-Plated Designer Rings",
-        "price": "Rs. 850 – Rs. 2,500",
+        "price": "Rs. 850 \u2013 Rs. 2,500",
         "description": "Cubic zirconia, gemstone, and traditional filigree adjustable party wear rings.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.11.57 PM.jpeg"
       },
       {
         "name": "Designer Bangles & Chooriyan Collection",
-        "price": "Rs. 1,400 – Rs. 4,500",
+        "price": "Rs. 1,400 \u2013 Rs. 4,500",
         "description": "Micro-gold polished studded designer bangles, kangans, and velvet chooriyan.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.11.58 PM.jpeg"
       },
       {
         "name": "Designer Hair Accessories & Bow Clips",
-        "price": "Rs. 250 – Rs. 950",
+        "price": "Rs. 250 \u2013 Rs. 950",
         "description": "Velvet hair bows, crystal butterfly barrettes, floral pins, and embellished headbands.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.00 PM (1).jpeg"
       },
       {
         "name": "Traditional Jhumkas & Chandbalis",
-        "price": "Rs. 950 – Rs. 3,500",
+        "price": "Rs. 950 \u2013 Rs. 3,500",
         "description": "Lightweight antique-finish hanging jhumkas with colorful pearls, beads, and stone work.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.00 PM.jpeg"
       },
@@ -64,10 +64,28 @@ const businesses = [
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.01 PM.jpeg"
       },
       {
+        "name": "Multani Kundan & Semi-Precious Mala Collection",
+        "price": "Rs. 3,200 \u2013 Rs. 8,500",
+        "description": "Hand-strung multi-tier bead malas, antique coin necklaces, and regal emerald pendant sets.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.02 PM.jpeg"
+      },
+      {
         "name": "Mannequin Bridal Exhibition Sets",
-        "price": "Rs. 15,000 – Rs. 35,000",
+        "price": "Rs. 15,000 \u2013 Rs. 35,000",
         "description": "Premium gold-polished bridal necklace sets with ear cuffs, nath, and matha patti.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.05 PM.jpeg"
+      },
+      {
+        "name": "Complete She Jewelers Showroom Collection",
+        "price": "Rs. 500 \u2013 Rs. 35,000",
+        "description": "Exclusive showcase featuring thousands of bridal sets, bangles, rings, and formal jewelry.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.06 PM (1).jpeg"
+      },
+      {
+        "name": "Bridal Ear Cuffs, Nath & Matha Patti Showcase",
+        "price": "Rs. 1,200 \u2013 Rs. 6,500",
+        "description": "Complete bridal embellishments including gold-finish pearl matha patti, traditional naths, and jhumki cuffs.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.06 PM.jpeg"
       }
     ]
   },
@@ -81,7 +99,7 @@ const businesses = [
     "phoneDisplay": "0332-8064376",
     "whatsapp": "923328064376",
     "address": "Water Plant, Near Quba Optical Center, Muzaffargarh",
-    "priceRange": "Rs. 20 – Rs. 20,000",
+    "priceRange": "Rs. 20 \u2013 Rs. 20,000",
     "accent": "#38bdf8",
     "products": [
       {
@@ -127,7 +145,7 @@ const businesses = [
     "name": "She Purse House",
     "category": "Fashion",
     "icon": "shopping-bag",
-    "image": "images/she-purse-house.jpg",
+    "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.04 PM.jpeg",
     "contactPerson": null,
     "phoneDisplay": "0300-0791699",
     "whatsapp": "923000791699",
@@ -148,32 +166,74 @@ const businesses = [
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.10 PM.jpeg"
       },
       {
+        "name": "Golden Shimmer Bridal Evening Clutch with Chain",
+        "price": "Rs. 3,200",
+        "description": "Textured metallic gold evening clutch with top jewel clasp and detachable chain strap.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.13 PM.jpeg"
+      },
+      {
         "name": "Premium Designer Leatherette Shoulder Tote",
-        "price": "Rs. 2,900 – Rs. 4,500",
+        "price": "Rs. 2,900 \u2013 Rs. 4,500",
         "description": "Spacious multi-compartment daily shoulder handbag for college and office.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.13 PM (1).jpeg"
       },
       {
         "name": "Designer Party & Formal Handbags Rack",
-        "price": "Rs. 2,200 – Rs. 5,000",
+        "price": "Rs. 2,200 \u2013 Rs. 5,000",
         "description": "Wide variety of pastel, tan, and formal handbags with matching gold hardware.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.14 PM (1).jpeg"
       },
       {
-        "name": "Luxury Leather Handbags & Evening Purses",
-        "price": "Rs. 1,800 – Rs. 4,200",
+        "name": "Multi-Tier Leatherette Handbags & Crossbody Bags",
+        "price": "Rs. 2,500 \u2013 Rs. 4,800",
+        "description": "Structured top-handle satchels, quilted shoulder bags, and luxury chain strap crossbodies.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.14 PM.jpeg"
+      },
+      {
+        "name": "Grand Handbag & Pastel Satchels Display Wall",
+        "price": "Rs. 2,400 \u2013 Rs. 5,200",
+        "description": "Extensive collection of modern totes, pastel office bags, satchels, and daypacks.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.15 PM (1).jpeg"
+      },
+      {
+        "name": "Luxury Structured Top-Handle Purses",
+        "price": "Rs. 1,800 \u2013 Rs. 4,200",
         "description": "Structured top-handle bags, crossbody flap purses, and stylish daily bags.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.15 PM.jpeg"
       },
       {
-        "name": "Trendy School & College Backpacks",
-        "price": "Rs. 1,600 – Rs. 2,800",
+        "name": "Colored Crystal & Velvet Bridal Clutches",
+        "price": "Rs. 3,500 \u2013 Rs. 5,500",
+        "description": "Exquisite jewel-tone bridal clutches in emerald green, ruby red, champagne gold, and silver.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.16 PM (1).jpeg"
+      },
+      {
+        "name": "Stacked Daily Leatherette & Pastel Wallets",
+        "price": "Rs. 850 \u2013 Rs. 1,950",
+        "description": "Large variety of tri-fold, bi-fold, and zipper card wallets in multiple pastel shades.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.16 PM.jpeg"
+      },
+      {
+        "name": "Glitter Evening Clutches & Pearl Minaudi\u00e8res",
+        "price": "Rs. 2,800 \u2013 Rs. 4,800",
+        "description": "Multi-tier glass showcase featuring glitter hard-case clutches and pearl-beaded purses.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.17 PM.jpeg"
+      },
+      {
+        "name": "Trendy School & College Backpacks Wall",
+        "price": "Rs. 1,600 \u2013 Rs. 2,800",
         "description": "Durable waterproof printed backpacks with padded straps and multi-pocket organizer.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.04 PM.jpeg"
       },
       {
+        "name": "Designer Shoulder Bags & Bridal Showcase Gallery",
+        "price": "Rs. 2,200 \u2013 Rs. 5,500",
+        "description": "Full store view with extensive displays of branded tote bags, school bags, and bridal evening wear.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.02 PM.jpeg"
+      },
+      {
         "name": "Executive Bifold Wallets & Cosmetic Cases",
-        "price": "Rs. 1,100 – Rs. 2,200",
+        "price": "Rs. 1,100 \u2013 Rs. 2,200",
         "description": "Textured vegan leather wallets, party clutches, and portable cosmetics vanity cases.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.01 PM.jpeg"
       }
@@ -213,7 +273,7 @@ const businesses = [
       {
         "name": "Flaming Peri Peri Pizza",
         "price": "Rs. 1,350",
-        "description": "Spicy grilled peri-peri chicken chunks topped with jalapeños and spicy drizzle.",
+        "description": "Spicy grilled peri-peri chicken chunks topped with jalape\u00f1os and spicy drizzle.",
         "image": null
       },
       {
@@ -259,7 +319,7 @@ const businesses = [
     "name": "Aliza Cake",
     "category": "Bakery",
     "icon": "cake",
-    "image": "images/aliza-cake.jpg",
+    "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.52 PM (1).jpeg",
     "contactPerson": null,
     "phoneDisplay": "0306-1919029",
     "whatsapp": "923061919029",
@@ -267,12 +327,6 @@ const businesses = [
     "priceRange": "Starting Rs. 950+",
     "accent": "#fb7185",
     "products": [
-      {
-        "name": "Pink Ribbon Birthday Bento Cake",
-        "price": "Rs. 950",
-        "description": "Cute pastel pink mini bento cake with black ribbon bows and custom birthday piping.",
-        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.47 PM.jpeg"
-      },
       {
         "name": "Floral Garden Birthday Bento Cake",
         "price": "Rs. 950",
@@ -286,16 +340,46 @@ const businesses = [
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.47 PM (2).jpeg"
       },
       {
+        "name": "Pink Ribbon Birthday Bento Cake",
+        "price": "Rs. 950",
+        "description": "Cute pastel pink mini bento cake with black ribbon bows and custom birthday piping.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.47 PM.jpeg"
+      },
+      {
+        "name": "Sidra Pink & White Birthday Bento Cake",
+        "price": "Rs. 950",
+        "description": "Delicate two-tone pink and white buttercream bento cake with pearl sprinkles and ribbon bow piping.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.48 PM (1).jpeg"
+      },
+      {
         "name": "Retro Cherry Birthday Bento Cake",
         "price": "Rs. 950",
         "description": "Classic vintage white and hot pink birthday cake with adorable hand-piped red cherries.",
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.48 PM (2).jpeg"
       },
       {
+        "name": "gl\u00f2 STUDIO Cosmetics & Makeup Theme Cake",
+        "price": "Rs. 2,600",
+        "description": "Trendy beauty studio cake with 3D fondant lipstick, blush palette, makeup brush, and black ribbon bow.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.48 PM (3).jpeg"
+      },
+      {
+        "name": "Starry Crown 'Ladla' Royal Blue Bento Cake",
+        "price": "Rs. 950",
+        "description": "Vibrant royal blue frosted bento cake with piped crown, edible pearls, and golden stars.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.48 PM.jpeg"
+      },
+      {
         "name": "Dual Theme Butterfly & Galaxy Cake",
         "price": "Rs. 2,200",
         "description": "Split half-and-half cake featuring pink butterflies on white frosting and starry blue galaxy.",
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.49 PM (1).jpeg"
+      },
+      {
+        "name": "Father's Rosette Birthday Cake (Abo Jee)",
+        "price": "Rs. 2,200",
+        "description": "Pure white frosted cake with blue buttercream rosette crescent and Urdu calligraphy 'Salgirah Mubarak Abo Jee'.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.49 PM (2).jpeg"
       },
       {
         "name": "Lavender Birthday Cake with Fresh Flower Wreath",
@@ -310,10 +394,22 @@ const businesses = [
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.50 PM (1).jpeg"
       },
       {
-        "name": "Medical Stethoscope Doctor Theme Cake",
+        "name": "Gohar Khan 1st Birthday Cartoon Car Cake",
+        "price": "Rs. 2,900",
+        "description": "Whimsical baby blue cloud cake with yellow fondant car, clouds, colorful side cars, and #1 candle.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.50 PM (2).jpeg"
+      },
+      {
+        "name": "Loaded Multi-Chocolate Drip Cake",
+        "price": "Rs. 3,200",
+        "description": "Decadent chocolate cake topped with KitKat bars, white chocolate drops, Snickers, and Lotus Biscoff.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.50 PM.jpeg"
+      },
+      {
+        "name": "Dr. Mustafa Medical Stethoscope Birthday Cake",
         "price": "Rs. 2,800",
-        "description": "Doctor birthday cake with edible fondant stethoscope, medicine bottle, and blister pill strips.",
-        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.54 PM (2).jpeg"
+        "description": "White doctor cake with black stethoscope, 3D fondant medicine bottle, capsule pills, and blister pack.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.51 PM (1).jpeg"
       },
       {
         "name": "Roza Kushai Celebration Theme Cake",
@@ -322,10 +418,16 @@ const businesses = [
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.51 PM (2).jpeg"
       },
       {
-        "name": "Twin Bento Celebration Cakes (Pack of 2)",
-        "price": "Rs. 1,850",
-        "description": "Pair of custom mini celebration cakes presented together for multi-occasion celebrations.",
-        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.52 PM.jpeg"
+        "name": "Black & White Police Vigo 3D Truck Cake",
+        "price": "Rs. 3,200",
+        "description": "Custom monochrome cake with handcrafted 3D fondant double-cabin Hilux Vigo truck for car lovers.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.51 PM (3).jpeg"
+      },
+      {
+        "name": "Dr. Sabahat Lady Surgeon Figurine Theme Cake",
+        "price": "Rs. 3,500",
+        "description": "Handcrafted 3D female doctor figurine in lab coat with mask, hearts, bandage, and colorful medical pills.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.51 PM.jpeg"
       },
       {
         "name": "Nikkah Mubarak White & Rose Gold Cake",
@@ -340,10 +442,64 @@ const businesses = [
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.52 PM (2).jpeg"
       },
       {
+        "name": "Twin Bento Celebration Cakes (Pack of 2)",
+        "price": "Rs. 1,850",
+        "description": "Pair of custom mini celebration cakes presented together for multi-occasion celebrations.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.52 PM.jpeg"
+      },
+      {
+        "name": "Bride To Be Princess Gown Bridal Shower Cake",
+        "price": "Rs. 2,800",
+        "description": "Stunning bridal shower cake with draped baby blue sweetheart gown, pearl flowers, and sprinkles.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.53 PM (1).jpeg"
+      },
+      {
+        "name": "Custom Edible Photo Strip & Golden Bubbles Cake",
+        "price": "Rs. 3,400",
+        "description": "Personalized celebration cake with edible sugar photo film strip, golden sphere bubbles, and gold leaf trim.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.53 PM (2).jpeg"
+      },
+      {
+        "name": "Doctor To Be Medical Lab Coat & Syringe Cake",
+        "price": "Rs. 2,900",
+        "description": "Medical student milestone cake with fondant doctor coat collar, stethoscope, syringe, and heartbeat line.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.53 PM.jpeg"
+      },
+      {
+        "name": "Disney Frozen Elsa 5th Birthday Tall Cake",
+        "price": "Rs. 3,600",
+        "description": "Ice blue textured tall cake featuring Princess Elsa, sparkling white & blue snowflakes, and #5 topper.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.54 PM (1).jpeg"
+      },
+      {
+        "name": "Medical Stethoscope Doctor Theme Cake",
+        "price": "Rs. 2,800",
+        "description": "Doctor birthday cake with edible fondant stethoscope, medicine bottle, and blister pill strips.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.54 PM (2).jpeg"
+      },
+      {
+        "name": "Dr. Abiha Rx Prescription Birthday Cake",
+        "price": "Rs. 2,800",
+        "description": "Medical graduation cake with edible doctor prescription pad, stethoscope, band-aids, and colorful pills.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.54 PM.jpeg"
+      },
+      {
         "name": "Boss Baby 1st Birthday Theme Cake",
         "price": "Rs. 3,200",
         "description": "Vibrant blue cake with Boss Baby cutouts, 100-dollar bills, baby bottle, and 3D #1 candle.",
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.55 PM (1).jpeg"
+      },
+      {
+        "name": "Cocomelon JJ & Rainbow 2nd Birthday Cake",
+        "price": "Rs. 3,200",
+        "description": "Pastel pink piped celebration cake with Cocomelon baby JJ topper, bright rainbow, and family cutouts.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.55 PM (2).jpeg"
+      },
+      {
+        "name": "Astronaut & Space Rocket 1st Birthday Cake",
+        "price": "Rs. 3,600",
+        "description": "Galactic blue tall cake with 3D fondant spaceman astronaut, rocket ship, moon crater, and solar planets.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.55 PM.jpeg"
       },
       {
         "name": "Bon Voyage Airplane Bento Cake",
@@ -358,10 +514,34 @@ const businesses = [
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.56 PM (2).jpeg"
       },
       {
+        "name": "Oreo Swirl Frosting Cupcakes (Set of 6)",
+        "price": "Rs. 1,100",
+        "description": "Chocolate cupcakes topped with cookies-and-cream swirl buttercream and whole crisp Oreo biscuits.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.56 PM (3).jpeg"
+      },
+      {
+        "name": "Oreo Chocolate Ganache Drip Cake",
+        "price": "Rs. 2,600",
+        "description": "Layers of moist chocolate sponge with vanilla cream, dark chocolate drip, and ring of Oreo biscuits.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.56 PM.jpeg"
+      },
+      {
         "name": "Chocolate Chip Cupcake Box (16 Pcs)",
         "price": "Rs. 1,600",
         "description": "Freshly baked moist chocolate muffins packed with semi-sweet chocolate chips.",
         "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.57 PM (1).jpeg"
+      },
+      {
+        "name": "Chocolate Glazed Donuts with White Drizzle (Box of 11)",
+        "price": "Rs. 1,650",
+        "description": "Rich cocoa-glazed golden donuts drizzled with sweet white sugar icing streaks.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.57 PM (2).jpeg"
+      },
+      {
+        "name": "White Rosette Swirl Vanilla Cupcakes (Set of 6)",
+        "price": "Rs. 950",
+        "description": "Classic fluffy golden vanilla cupcakes decorated with handcrafted elegant white rose piping.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.57 PM.jpeg"
       },
       {
         "name": "Fudge Chocolate Brownies Box (6 Pcs)",
@@ -478,7 +658,7 @@ const businesses = [
     "name": "Posh Baby Garments",
     "category": "Kids",
     "icon": "shirt",
-    "image": "images/posh-baby.jpg",
+    "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.57 PM.jpeg",
     "contactPerson": null,
     "phoneDisplay": "0315-5500888",
     "whatsapp": "923155500888",
@@ -500,27 +680,45 @@ const businesses = [
       },
       {
         "name": "Princess Net & Fur Party Frock",
-        "price": "Rs. 2,600 – Rs. 3,400",
+        "price": "Rs. 2,600 \u2013 Rs. 3,400",
         "description": "Multi-layered tulle skirt frock with plush fur jacket and flower brooches.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.36 PM.jpeg"
       },
       {
-        "name": "Newborn Winter Warm Sweaters & Baby Bag Set",
-        "price": "Rs. 1,800 – Rs. 2,800",
-        "description": "Soft knitted pastel sweaters, fleece baby jackets, and quilted travel bag.",
-        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.57 PM.jpeg"
+        "name": "Royal Velvet & Fur Kids Party Wear Dresses",
+        "price": "Rs. 2,800 \u2013 Rs. 4,500",
+        "description": "Showcase of luxury fur coats, party frocks, and embroidered velvet outfits on boutique display.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.43 PM (1).jpeg"
+      },
+      {
+        "name": "Baby Boy Velvet Kurta & Jacket Set",
+        "price": "Rs. 2,500 \u2013 Rs. 3,500",
+        "description": "Plush embroidered winter velvet suit for infants and toddlers with matching warm socks.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.44 PM.jpeg"
+      },
+      {
+        "name": "Infant Knitted Sweaters & Boutique Window Collection",
+        "price": "Rs. 1,400 \u2013 Rs. 2,900",
+        "description": "Pastel baby sweaters, cozy winter coats, baby kits, and formal toddler dresses on glass display.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.46 PM.jpeg"
       },
       {
         "name": "Baby Girl Formal Collection & Boutique Wear",
-        "price": "Rs. 2,200 – Rs. 4,200",
+        "price": "Rs. 2,200 \u2013 Rs. 4,200",
         "description": "Party dresses, net frocks, velvet festive suits, and matching mini clutches.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.28 PM.jpeg"
       },
       {
-        "name": "Baby Boy Velvet Kurta & Jacket Set",
-        "price": "Rs. 2,500 – Rs. 3,500",
-        "description": "Plush embroidered winter velvet suit for infants and toddlers with matching warm socks.",
-        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.44 PM.jpeg"
+        "name": "Newborn Winter Warm Sweaters & Baby Bag Set",
+        "price": "Rs. 1,800 \u2013 Rs. 2,800",
+        "description": "Soft knitted pastel sweaters, fleece baby jackets, and quilted travel bag.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.57 PM.jpeg"
+      },
+      {
+        "name": "Kids Printed Travel & School Day Backpacks",
+        "price": "Rs. 1,200 \u2013 Rs. 2,200",
+        "description": "Cute cartoon and character printed school backpacks with multiple compartments for toddlers.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.58 PM.jpeg"
       }
     ]
   },
@@ -529,12 +727,12 @@ const businesses = [
     "name": "Modern Steel House",
     "category": "Home & Kitchen",
     "icon": "utensils",
-    "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.32 PM.jpeg",
+    "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.57 PM.jpeg",
     "contactPerson": "Faisal Kareem",
     "phoneDisplay": "0304-6861520",
     "whatsapp": "923046861520",
     "address": "Near Hassan Plaza, Main Bazar, Muzaffargarh",
-    "priceRange": "Rs. 250 – Rs. 35,000",
+    "priceRange": "Rs. 250 \u2013 Rs. 35,000",
     "accent": "#f97316",
     "products": [
       {
@@ -544,10 +742,22 @@ const businesses = [
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.57 PM.jpeg"
       },
       {
-        "name": "Royal Insulated Hot Pot Gift Set (4 Pcs)",
-        "price": "Rs. 4,800",
-        "description": "Stainless steel interior thermal insulated casseroles keeping rotis and curries steaming hot for hours.",
-        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.44 PM.jpeg"
+        "name": "Faisal Kareem Cash Counter & Giftware Display",
+        "price": "Rs. 850 \u2013 Rs. 18,000",
+        "description": "Modern Steel House main reception counter featuring Artec & Spring gift sets, blenders, and dinnerware.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.32 PM.jpeg"
+      },
+      {
+        "name": "Complete Dinnerware & Kitchen Gift Packs Collection",
+        "price": "Rs. 2,500 \u2013 Rs. 16,500",
+        "description": "Showcase of boxed tea sets, imported glassware, Artec gift packs, juicer blenders, and household essentials.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.37 PM.jpeg"
+      },
+      {
+        "name": "Household Plasticware & Storage Baskets",
+        "price": "Rs. 350 \u2013 Rs. 1,600",
+        "description": "Durable laundry baskets, pedal dustbins, dish drainers, and food storage tubs.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.38 PM.jpeg"
       },
       {
         "name": "Stainless Steel Cooking Pots & Thali Set",
@@ -556,22 +766,28 @@ const businesses = [
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.39 PM.jpeg"
       },
       {
+        "name": "Kitchen Appliances & Insulated Water Coolers",
+        "price": "Rs. 3,200 \u2013 Rs. 8,500",
+        "description": "Sandwich toasters, juicer blenders, electric kettles, and high-capacity water coolers.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.40 PM.jpeg"
+      },
+      {
         "name": "Glassware Jug & Tumbler Drinkware Set",
         "price": "Rs. 2,200",
         "description": "Imported crystal embossed water set with 1 large jug and 6 matching drinking glasses.",
         "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.42 PM.jpeg"
       },
       {
-        "name": "Kitchen Appliances & Insulated Water Coolers",
-        "price": "Rs. 3,200 – Rs. 8,500",
-        "description": "Sandwich toasters, juicer blenders, electric kettles, and high-capacity water coolers.",
-        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.40 PM.jpeg"
+        "name": "Royal Insulated Hot Pot Gift Set (4 Pcs)",
+        "price": "Rs. 4,800",
+        "description": "Stainless steel interior thermal insulated casseroles keeping rotis and curries steaming hot for hours.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.44 PM.jpeg"
       },
       {
-        "name": "Household Plasticware & Storage Baskets",
-        "price": "Rs. 350 – Rs. 1,600",
-        "description": "Durable laundry baskets, pedal dustbins, dish drainers, and food storage tubs.",
-        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.38 PM.jpeg"
+        "name": "Heavy Gauge Stainless Steel Degchis & Milk Pots",
+        "price": "Rs. 4,200 \u2013 Rs. 14,000",
+        "description": "Pure stainless steel cooking pots, Ajwa and Noman milk containers, stainless serving thalis, and food storage canisters.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.45 PM.jpeg"
       }
     ]
   }
