@@ -4,439 +4,574 @@
  * Extensible data structure: to add more businesses, append objects to the array.
  * Real image support:
  *   - Business cover image: specify relative path in `image` (e.g. "images/she-jewelers.jpg") or keep null for luxury fallback.
- *   - Product images: specify relative path in `products[i].image` (e.g. "images/products/chicago-pizza.jpg") or keep null for luxury fallback.
+ *   - Product images: specify relative path in `products[i].image` or keep null for luxury fallback.
  */
 
 const businesses = [
   {
-    id: 1,
-    name: "She Jewelers",
-    category: "Jewelry",
-    icon: "gem",
-    image: "images/she-jewelers.jpg",
-    contactPerson: null,
-    phoneDisplay: "0321-7486566",
-    whatsapp: "923217486566",
-    address: "Hassan Plaza, Shop #5, 1st Floor, Muzaffargarh",
-    priceRange: "Rs. 200 – Rs. 20,000",
-    accent: "#f59e0b",
-    products: [
+    "id": 1,
+    "name": "She Jewelers",
+    "category": "Jewelry",
+    "icon": "gem",
+    "image": "images/she-jewelers.jpg",
+    "contactPerson": null,
+    "phoneDisplay": "0321-7486566",
+    "whatsapp": "923217486566",
+    "address": "Hassan Plaza, Shop #5, 1st Floor, Muzaffargarh",
+    "priceRange": "Rs. 200 – Rs. 20,000",
+    "accent": "#f59e0b",
+    "products": [
       {
-        name: "Artificial Jewelry Set",
-        price: "Rs. 3,500",
-        description: "Complete royal gold-plated artificial set with matching earrings and teeka.",
-        image: null // e.g., "images/products/she-jewelry-set.jpg"
+        "name": "Royal Kundan & Zircon Bridal Set",
+        "price": "Rs. 18,500",
+        "description": "Handcrafted traditional Multani Kundan bridal set with choker, heavy jhumkas, and matching teeka.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.11.55 PM.jpeg"
       },
       {
-        name: "Kundan Bridal Set",
-        price: "Rs. 18,500",
-        description: "Handcrafted traditional Multani Kundan bridal set with choker and jhumkas.",
-        image: null // e.g., "images/products/kundan-bridal-set.jpg"
+        "name": "Grand Artificial Jewelry Showcase Set",
+        "price": "Rs. 4,500 – Rs. 22,000",
+        "description": "Complete royal gold-plated artificial set with multilayer necklace, earrings, and matching forehead ornaments.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.11.55 PM (1).jpeg"
       },
       {
-        name: "Party Wear Choker",
-        price: "Rs. 2,800",
-        description: "Delicate cubic zirconia pearl choker designed for festive gatherings.",
-        image: null // e.g., "images/products/party-choker.jpg"
+        "name": "Luxury Gold-Plated Designer Rings",
+        "price": "Rs. 850 – Rs. 2,500",
+        "description": "Cubic zirconia, gemstone, and traditional filigree adjustable party wear rings.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.11.57 PM.jpeg"
       },
       {
-        name: "Fashion Bangles & Kangans",
-        price: "Rs. 1,400",
-        description: "Set of 4 micro-gold polished studded designer bangles.",
-        image: null // e.g., "images/products/fashion-bangles.jpg"
+        "name": "Designer Bangles & Chooriyan Collection",
+        "price": "Rs. 1,400 – Rs. 4,500",
+        "description": "Micro-gold polished studded designer bangles, kangans, and velvet chooriyan.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.11.58 PM.jpeg"
       },
       {
-        name: "Traditional Jhumkas",
-        price: "Rs. 950",
-        description: "Lightweight antique-finish hanging jhumkas with emerald green beads.",
-        image: null // e.g., "images/products/traditional-jhumkas.jpg"
+        "name": "Designer Hair Accessories & Bow Clips",
+        "price": "Rs. 250 – Rs. 950",
+        "description": "Velvet hair bows, crystal butterfly barrettes, floral pins, and embellished headbands.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.00 PM (1).jpeg"
       },
       {
-        name: "Bridal Matha Patti",
-        price: "Rs. 4,200",
-        description: "Elaborate forehead jewelry adorned with crystal pearls and stone work.",
-        image: null // e.g., "images/products/bridal-matha-patti.jpg"
+        "name": "Traditional Jhumkas & Chandbalis",
+        "price": "Rs. 950 – Rs. 3,500",
+        "description": "Lightweight antique-finish hanging jhumkas with colorful pearls, beads, and stone work.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.00 PM.jpeg"
+      },
+      {
+        "name": "Heavy Bridal Choker & Pearl Mala",
+        "price": "Rs. 12,000",
+        "description": "Exquisite ruby and emerald studded bridal choker paired with multi-layer pearl mala.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.01 PM.jpeg"
+      },
+      {
+        "name": "Mannequin Bridal Exhibition Sets",
+        "price": "Rs. 15,000 – Rs. 35,000",
+        "description": "Premium gold-polished bridal necklace sets with ear cuffs, nath, and matha patti.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.05 PM.jpeg"
       }
     ]
   },
   {
-    id: 2,
-    name: "Time Book Center",
-    category: "Books",
-    icon: "book-open",
-    image: "images/time-book-center.jpg",
-    contactPerson: "Ahmer",
-    phoneDisplay: "0332-8064376",
-    whatsapp: "923328064376",
-    address: "Water Plant, Near Quba Optical Center, Muzaffargarh",
-    priceRange: "Rs. 20 – Rs. 20,000",
-    accent: "#38bdf8",
-    products: [
+    "id": 2,
+    "name": "Time Book Center",
+    "category": "Books",
+    "icon": "book-open",
+    "image": "images/time-book-center.jpg",
+    "contactPerson": "Ahmer",
+    "phoneDisplay": "0332-8064376",
+    "whatsapp": "923328064376",
+    "address": "Water Plant, Near Quba Optical Center, Muzaffargarh",
+    "priceRange": "Rs. 20 – Rs. 20,000",
+    "accent": "#38bdf8",
+    "products": [
       {
-        name: "Oxford Advanced Learner's Dictionary",
-        price: "Rs. 1,850",
-        description: "Original latest edition English-Urdu comprehensive reference dictionary.",
-        image: null // e.g., "images/products/oxford-dictionary.jpg"
+        "name": "Oxford Advanced Learner's Dictionary",
+        "price": "Rs. 1,850",
+        "description": "Original latest edition English-Urdu comprehensive reference dictionary.",
+        "image": null
       },
       {
-        name: "Matric & Inter Science Textbooks",
-        price: "Rs. 1,200",
-        description: "Complete Punjab Curriculum & Textbook Board (PCTB) verified course books.",
-        image: null // e.g., "images/products/science-textbooks.jpg"
+        "name": "Matric & Inter Science Textbooks",
+        "price": "Rs. 1,200",
+        "description": "Complete Punjab Curriculum & Textbook Board (PCTB) verified course books.",
+        "image": null
       },
       {
-        name: "Premium Executive Diary & Pen Set",
-        price: "Rs. 1,500",
-        description: "Leatherette ruled notebook with heavy metal matte black rollerball pen.",
-        image: null // e.g., "images/products/diary-pen-set.jpg"
+        "name": "Premium Executive Diary & Pen Set",
+        "price": "Rs. 1,500",
+        "description": "Leatherette ruled notebook with heavy metal matte black rollerball pen.",
+        "image": null
       },
       {
-        name: "School & College Stationery Kit",
-        price: "Rs. 650",
-        description: "Complete geometry box, highlighters, scales, eraser and sketching pencils.",
-        image: null // e.g., "images/products/stationery-kit.jpg"
+        "name": "School & College Stationery Kit",
+        "price": "Rs. 650",
+        "description": "Complete geometry box, highlighters, scales, eraser and sketching pencils.",
+        "image": null
       },
       {
-        name: "CSS & PMS Competitive Exam Guides",
-        price: "Rs. 2,400",
-        description: "Up-to-date Pakistan Affairs, Current Affairs & General Knowledge compilations.",
-        image: null // e.g., "images/products/css-exam-guides.jpg"
+        "name": "CSS & PMS Competitive Exam Guides",
+        "price": "Rs. 2,400",
+        "description": "Up-to-date Pakistan Affairs, Current Affairs & General Knowledge compilations.",
+        "image": null
       },
       {
-        name: "Islamic History & Urdu Literature Classics",
-        price: "Rs. 950",
-        description: "Selected literary works and biographies in durable hardbound print.",
-        image: null // e.g., "images/products/urdu-literature.jpg"
+        "name": "Islamic History & Urdu Literature Classics",
+        "price": "Rs. 950",
+        "description": "Selected literary works and biographies in durable hardbound print.",
+        "image": null
       }
     ]
   },
   {
-    id: 3,
-    name: "She Purse House",
-    category: "Fashion",
-    icon: "shopping-bag",
-    image: "images/she-purse-house.jpg",
-    contactPerson: null,
-    phoneDisplay: "0300-0791699",
-    whatsapp: "923000791699",
-    address: "Hassan Plaza, Shop #18, Muzaffargarh",
-    priceRange: "Best Market Rates",
-    accent: "#ec4899",
-    products: [
+    "id": 3,
+    "name": "She Purse House",
+    "category": "Fashion",
+    "icon": "shopping-bag",
+    "image": "images/she-purse-house.jpg",
+    "contactPerson": null,
+    "phoneDisplay": "0300-0791699",
+    "whatsapp": "923000791699",
+    "address": "Hassan Plaza, Shop #18, Muzaffargarh",
+    "priceRange": "Best Market Rates",
+    "accent": "#ec4899",
+    "products": [
       {
-        name: "Luxury Bridal Clutch",
-        price: "Rs. 3,800",
-        description: "Heavy zardozi and crystal embellished formal bridal evening clutch.",
-        image: null // e.g., "images/products/bridal-clutch.jpg"
+        "name": "Luxury Crystal Rhinestone Bridal Clutch",
+        "price": "Rs. 3,800",
+        "description": "Heavy silver rhinestone and crystal evening bridal clutch with metallic twist chain.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.12 PM.jpeg"
       },
       {
-        name: "Premium Leatherette Tote Bag",
-        price: "Rs. 2,900",
-        description: "Spacious multi-compartment daily shoulder handbag for working ladies.",
-        image: null // e.g., "images/products/leatherette-tote.jpg"
+        "name": "Traditional Embellished Potli Bag with Pearl Handle",
+        "price": "Rs. 2,800",
+        "description": "Cylinder crystal potli pouch with drawstring closure and royal pearl beaded wrist strap.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.10 PM.jpeg"
       },
       {
-        name: "Sleek Ladies Bifold Wallet",
-        price: "Rs. 1,100",
-        description: "Compact textured vegan leather wallet with card slots and coin pouch.",
-        image: null // e.g., "images/products/ladies-wallet.jpg"
+        "name": "Premium Designer Leatherette Shoulder Tote",
+        "price": "Rs. 2,900 – Rs. 4,500",
+        "description": "Spacious multi-compartment daily shoulder handbag for college and office.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.13 PM (1).jpeg"
       },
       {
-        name: "Crossbody Casual Sling",
-        price: "Rs. 1,750",
-        description: "Trendy lightweight chain-strap crossbody purse for daily outings.",
-        image: null // e.g., "images/products/crossbody-sling.jpg"
+        "name": "Designer Party & Formal Handbags Rack",
+        "price": "Rs. 2,200 – Rs. 5,000",
+        "description": "Wide variety of pastel, tan, and formal handbags with matching gold hardware.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.14 PM (1).jpeg"
       },
       {
-        name: "Imported Velvet Vanity Case",
-        price: "Rs. 2,200",
-        description: "Portable cosmetic organizer with integrated vanity mirror and dividers.",
-        image: null // e.g., "images/products/vanity-case.jpg"
+        "name": "Luxury Leather Handbags & Evening Purses",
+        "price": "Rs. 1,800 – Rs. 4,200",
+        "description": "Structured top-handle bags, crossbody flap purses, and stylish daily bags.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.15 PM.jpeg"
       },
       {
-        name: "Matte Lip & Face Cosmetics Kit",
-        price: "Rs. 1,600",
-        description: "Curated long-wear waterproof cosmetic collection for bridal and party use.",
-        image: null // e.g., "images/products/cosmetics-kit.jpg"
+        "name": "Trendy School & College Backpacks",
+        "price": "Rs. 1,600 – Rs. 2,800",
+        "description": "Durable waterproof printed backpacks with padded straps and multi-pocket organizer.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.04 PM.jpeg"
+      },
+      {
+        "name": "Executive Bifold Wallets & Cosmetic Cases",
+        "price": "Rs. 1,100 – Rs. 2,200",
+        "description": "Textured vegan leather wallets, party clutches, and portable cosmetics vanity cases.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.14.01 PM.jpeg"
       }
     ]
   },
   {
-    id: 4,
-    name: "Flavor Bazar Pizza Shop",
-    category: "Food",
-    icon: "pizza",
-    image: "images/flavor-bazar.jpg",
-    contactPerson: "Hassnain",
-    phoneDisplay: "0326-0861111",
-    whatsapp: "923260861111",
-    address: "Alipur Road, Opposite Total Petrol Pump, Muzaffargarh",
-    priceRange: "Freshly Made Menu",
-    accent: "#ef4444",
-    products: [
+    "id": 4,
+    "name": "Flavor Bazar Pizza Shop",
+    "category": "Food",
+    "icon": "pizza",
+    "image": "images/flavor-bazar.jpg",
+    "contactPerson": "Hassnain",
+    "phoneDisplay": "0326-0861111",
+    "whatsapp": "923260861111",
+    "address": "Alipur Road, Opposite Total Petrol Pump, Muzaffargarh",
+    "priceRange": "Freshly Made Menu",
+    "accent": "#ef4444",
+    "products": [
       {
-        name: "All Flavor Supreme Pizza",
-        price: "Rs. 1,450",
-        description: "Loaded combination of smoked chicken, sausages, olives, mushrooms and mozzarella.",
-        image: null // e.g., "images/products/all-flavor-pizza.jpg"
+        "name": "All Flavor Supreme Pizza",
+        "price": "Rs. 1,450",
+        "description": "Loaded combination of smoked chicken, sausages, olives, mushrooms and mozzarella.",
+        "image": null
       },
       {
-        name: "Crunchy Zinger Burger",
-        price: "Rs. 420",
-        description: "Crispy fried golden chicken breast fillet with iceberg lettuce and secret sauce.",
-        image: null // e.g., "images/products/zinger-burger.jpg"
+        "name": "Crunchy Zinger Burger",
+        "price": "Rs. 420",
+        "description": "Crispy fried golden chicken breast fillet with iceberg lettuce and secret sauce.",
+        "image": null
       },
       {
-        name: "Deep Dish Chicago Style Pizza",
-        price: "Rs. 1,950",
-        description: "Authentic high-crust pizza packed with molten mozzarella, beef pepperoni and crushed tomato sauce.",
-        image: null // e.g., "images/products/chicago-style-pizza.jpg"
+        "name": "Deep Dish Chicago Style Pizza",
+        "price": "Rs. 1,950",
+        "description": "Authentic high-crust pizza packed with molten mozzarella, beef pepperoni and crushed tomato sauce.",
+        "image": null
       },
       {
-        name: "Flaming Peri Peri Pizza",
-        price: "Rs. 1,350",
-        description: "Spicy grilled peri-peri chicken chunks topped with jalapeños and spicy drizzle.",
-        image: null // e.g., "images/products/peri-peri-pizza.jpg"
+        "name": "Flaming Peri Peri Pizza",
+        "price": "Rs. 1,350",
+        "description": "Spicy grilled peri-peri chicken chunks topped with jalapeños and spicy drizzle.",
+        "image": null
       },
       {
-        name: "Original Chicago Pizza",
-        price: "Rs. 1,800",
-        description: "Signature classic deep crust stuffed with double cheese and seasoned chicken.",
-        image: null // e.g., "images/products/original-chicago.jpg"
+        "name": "Original Chicago Pizza",
+        "price": "Rs. 1,800",
+        "description": "Signature classic deep crust stuffed with double cheese and seasoned chicken.",
+        "image": null
       },
       {
-        name: "Beyond Butter Delight Pizza",
-        price: "Rs. 1,400",
-        description: "Rich buttery sauce base with herb-marinated chicken and caramelized onions.",
-        image: null // e.g., "images/products/beyond-butter-pizza.jpg"
+        "name": "Beyond Butter Delight Pizza",
+        "price": "Rs. 1,400",
+        "description": "Rich buttery sauce base with herb-marinated chicken and caramelized onions.",
+        "image": null
       },
       {
-        name: "Greek BBQ Smoked Pizza",
-        price: "Rs. 1,350",
-        description: "Smoky barbecue chicken, bell peppers, sweet red onions and feta cheese.",
-        image: null // e.g., "images/products/greek-bbq-pizza.jpg"
+        "name": "Greek BBQ Smoked Pizza",
+        "price": "Rs. 1,350",
+        "description": "Smoky barbecue chicken, bell peppers, sweet red onions and feta cheese.",
+        "image": null
       },
       {
-        name: "Authentic Arabic Fatayer",
-        price: "Rs. 580",
-        description: "Traditional baked pastry boat filled with spiced minced chicken and melted cheese.",
-        image: null // e.g., "images/products/arabic-fatayer.jpg"
+        "name": "Authentic Arabic Fatayer",
+        "price": "Rs. 580",
+        "description": "Traditional baked pastry boat filled with spiced minced chicken and melted cheese.",
+        "image": null
       },
       {
-        name: "Egyptian Herbed Fatayer",
-        price: "Rs. 620",
-        description: "Flaky layered Middle Eastern pie stuffed with cheese, olives and za'atar herbs.",
-        image: null // e.g., "images/products/egyptian-fatayer.jpg"
+        "name": "Egyptian Herbed Fatayer",
+        "price": "Rs. 620",
+        "description": "Flaky layered Middle Eastern pie stuffed with cheese, olives and za'atar herbs.",
+        "image": null
       },
       {
-        name: "Cheese Lover Extreme Pizza",
-        price: "Rs. 1,550",
-        description: "Four-cheese fusion featuring stretchy mozzarella, sharp cheddar, gouda and parmesan.",
-        image: null // e.g., "images/products/cheese-lover-pizza.jpg"
+        "name": "Cheese Lover Extreme Pizza",
+        "price": "Rs. 1,550",
+        "description": "Four-cheese fusion featuring stretchy mozzarella, sharp cheddar, gouda and parmesan.",
+        "image": null
       }
     ]
   },
   {
-    id: 5,
-    name: "Aliza Cake",
-    category: "Bakery",
-    icon: "cake",
-    image: "images/aliza-cake.jpg",
-    contactPerson: null,
-    phoneDisplay: "0306-1919029",
-    whatsapp: "923061919029",
-    address: "Qinwan Chowk, Muzaffargarh",
-    priceRange: "Starting Rs. 1,000+",
-    accent: "#fb7185",
-    products: [
+    "id": 5,
+    "name": "Aliza Cake",
+    "category": "Bakery",
+    "icon": "cake",
+    "image": "images/aliza-cake.jpg",
+    "contactPerson": null,
+    "phoneDisplay": "0306-1919029",
+    "whatsapp": "923061919029",
+    "address": "Qinwan Chowk, Muzaffargarh",
+    "priceRange": "Starting Rs. 950+",
+    "accent": "#fb7185",
+    "products": [
       {
-        name: "Custom Fondant Theme Cake (2 Lbs)",
-        price: "Rs. 2,800",
-        description: "Bespoke handcrafted fondant design tailored for birthdays and anniversaries.",
-        image: null // e.g., "images/products/custom-fondant-cake.jpg"
+        "name": "Pink Ribbon Birthday Bento Cake",
+        "price": "Rs. 950",
+        "description": "Cute pastel pink mini bento cake with black ribbon bows and custom birthday piping.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.47 PM.jpeg"
       },
       {
-        name: "Belgian Chocolate Fudge Cake",
-        price: "Rs. 1,900",
-        description: "Decadent moist dark chocolate sponge layered with rich warm fudge ganache.",
-        image: null // e.g., "images/products/chocolate-fudge-cake.jpg"
+        "name": "Floral Garden Birthday Bento Cake",
+        "price": "Rs. 950",
+        "description": "Artisan mini bento cake decorated with hand-piped floral wildflowers and lavender motifs.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.47 PM (1).jpeg"
       },
       {
-        name: "Royal Red Velvet Cream Cheese Cake",
-        price: "Rs. 2,100",
-        description: "Classic scarlet cocoa sponge paired with silky imported cream cheese frosting.",
-        image: null // e.g., "images/products/red-velvet-cake.jpg"
+        "name": "School Achievement & Graduation Theme Cake",
+        "price": "Rs. 2,400",
+        "description": "School logo crest cake with 3D graduation cap books and star piping for student milestones.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.47 PM (2).jpeg"
       },
       {
-        name: "Multi-Tier Wedding Celebration Cake",
-        price: "Rs. 6,500",
-        description: "Majestic tiered floral cake designed to be the centerpiece of wedding receptions.",
-        image: null // e.g., "images/products/wedding-celebration-cake.jpg"
+        "name": "Retro Cherry Birthday Bento Cake",
+        "price": "Rs. 950",
+        "description": "Classic vintage white and hot pink birthday cake with adorable hand-piped red cherries.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.48 PM (2).jpeg"
       },
       {
-        name: "Trendy Korean Bento Cake",
-        price: "Rs. 950",
-        description: "Cute personal mini celebration cake packed in an eco-friendly bento box.",
-        image: null // e.g., "images/products/korean-bento-cake.jpg"
+        "name": "Dual Theme Butterfly & Galaxy Cake",
+        "price": "Rs. 2,200",
+        "description": "Split half-and-half cake featuring pink butterflies on white frosting and starry blue galaxy.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.49 PM (1).jpeg"
       },
       {
-        name: "Assorted Gourmet Cupcakes (Box of 6)",
-        price: "Rs. 1,200",
-        description: "Mix of lotus biscoff, salted caramel, nutella, and strawberry swirl.",
-        image: null // e.g., "images/products/gourmet-cupcakes.jpg"
+        "name": "Lavender Birthday Cake with Fresh Flower Wreath",
+        "price": "Rs. 1,950",
+        "description": "Soft lilac buttercream cake accented with fresh red gajra wreath and custom calendar date.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.49 PM.jpeg"
+      },
+      {
+        "name": "M Essa Little Boy's Car Theme Birthday Cake",
+        "price": "Rs. 2,800",
+        "description": "Sky blue textured cake with handcrafted 3D fondant cars, metallic balls, and name lettering.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.50 PM (1).jpeg"
+      },
+      {
+        "name": "Medical Stethoscope Doctor Theme Cake",
+        "price": "Rs. 2,800",
+        "description": "Doctor birthday cake with edible fondant stethoscope, medicine bottle, and blister pill strips.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.54 PM (2).jpeg"
+      },
+      {
+        "name": "Roza Kushai Celebration Theme Cake",
+        "price": "Rs. 2,600",
+        "description": "Peach frosted cake topped with fondant crescent moon, prayer mat, tasbeeh, and dates.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.51 PM (2).jpeg"
+      },
+      {
+        "name": "Twin Bento Celebration Cakes (Pack of 2)",
+        "price": "Rs. 1,850",
+        "description": "Pair of custom mini celebration cakes presented together for multi-occasion celebrations.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.52 PM.jpeg"
+      },
+      {
+        "name": "Nikkah Mubarak White & Rose Gold Cake",
+        "price": "Rs. 3,500",
+        "description": "Elegant wedding cake featuring rose gold leaf brushstrokes, fresh white blooms, and acrylic topper.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.52 PM (1).jpeg"
+      },
+      {
+        "name": "Birthday Bento Cake & Dairy Milk Rose Bouquet Combo",
+        "price": "Rs. 3,200",
+        "description": "Lavender birthday bento cake paired with a luxurious fresh red rose & Cadbury chocolate bouquet.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.52 PM (2).jpeg"
+      },
+      {
+        "name": "Boss Baby 1st Birthday Theme Cake",
+        "price": "Rs. 3,200",
+        "description": "Vibrant blue cake with Boss Baby cutouts, 100-dollar bills, baby bottle, and 3D #1 candle.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.55 PM (1).jpeg"
+      },
+      {
+        "name": "Bon Voyage Airplane Bento Cake",
+        "price": "Rs. 1,250",
+        "description": "Travel celebration cake with edible fondant Qatar airplane and heartfelt bon voyage message.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.56 PM (1).jpeg"
+      },
+      {
+        "name": "Fresh Classic Glazed Donuts (Box of 9)",
+        "price": "Rs. 1,350",
+        "description": "Fluffy melt-in-the-mouth golden fried donuts coated in sweet vanilla glaze.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.56 PM (2).jpeg"
+      },
+      {
+        "name": "Chocolate Chip Cupcake Box (16 Pcs)",
+        "price": "Rs. 1,600",
+        "description": "Freshly baked moist chocolate muffins packed with semi-sweet chocolate chips.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.57 PM (1).jpeg"
+      },
+      {
+        "name": "Fudge Chocolate Brownies Box (6 Pcs)",
+        "price": "Rs. 1,200",
+        "description": "Rich fudgy dark chocolate brownies with crackly tops baked to perfection.",
+        "image": "images/New folder/WhatsApp Image 2026-11-19 at 5.08.58 PM.jpeg"
       }
     ]
   },
   {
-    id: 6,
-    name: "Anmol Beauty Parlor",
-    category: "Beauty",
-    icon: "sparkles",
-    image: "images/anmol-beauty.jpg",
-    contactPerson: null,
-    phoneDisplay: "0315-0626698",
-    whatsapp: "923150626698",
-    address: "Khaki House, Near Model Bazar, Muzaffargarh",
-    priceRange: "Appointment Based",
-    accent: "#a855f7",
-    products: [
+    "id": 6,
+    "name": "Anmol Beauty Parlor",
+    "category": "Beauty",
+    "icon": "sparkles",
+    "image": "images/anmol-beauty.jpg",
+    "contactPerson": null,
+    "phoneDisplay": "0315-0626698",
+    "whatsapp": "923150626698",
+    "address": "Khaki House, Near Model Bazar, Muzaffargarh",
+    "priceRange": "Appointment Based",
+    "accent": "#a855f7",
+    "products": [
       {
-        name: "Complete Royal Bridal Makeup Package",
-        price: "Rs. 25,000",
-        description: "Signature HD bridal makeup with lash extensions, hair styling, dupatta & jewelry setting.",
-        image: null // e.g., "images/products/bridal-makeup-package.jpg"
+        "name": "Complete Royal Bridal Makeup Package",
+        "price": "Rs. 25,000",
+        "description": "Signature HD bridal makeup with lash extensions, hair styling, dupatta & jewelry setting.",
+        "image": null
       },
       {
-        name: "Glamorous Engagement / Barat Makeup",
-        price: "Rs. 12,000",
-        description: "Airbrush glowing finish with contoured highlights and elegant hairdo.",
-        image: null // e.g., "images/products/engagement-makeup.jpg"
+        "name": "Glamorous Engagement / Barat Makeup",
+        "price": "Rs. 12,000",
+        "description": "Airbrush glowing finish with contoured highlights and elegant hairdo.",
+        "image": null
       },
       {
-        name: "Party Wear Glow Makeup",
-        price: "Rs. 4,500",
-        description: "Subtle radiant evening makeup with eye contouring and volume curls.",
-        image: null // e.g., "images/products/party-makeup.jpg"
+        "name": "Party Wear Glow Makeup",
+        "price": "Rs. 4,500",
+        "description": "Subtle radiant evening makeup with eye contouring and volume curls.",
+        "image": null
       },
       {
-        name: "Hydra-Whitening Herbal Facial",
-        price: "Rs. 3,500",
-        description: "Deep pore cleansing, steam extraction, vitamin C brightening mask and serum infusion.",
-        image: null // e.g., "images/products/hydra-facial.jpg"
+        "name": "Hydra-Whitening Herbal Facial",
+        "price": "Rs. 3,500",
+        "description": "Deep pore cleansing, steam extraction, vitamin C brightening mask and serum infusion.",
+        "image": null
       },
       {
-        name: "Keratin & Protein Hair Treatment",
-        price: "Rs. 8,500",
-        description: "Intense frizz control and hair straightening treatment for silky smooth hair.",
-        image: null // e.g., "images/products/keratin-treatment.jpg"
+        "name": "Keratin & Protein Hair Treatment",
+        "price": "Rs. 8,500",
+        "description": "Intense frizz control and hair straightening treatment for silky smooth hair.",
+        "image": null
       },
       {
-        name: "Organic Herbal Manicure & Pedicure",
-        price: "Rs. 2,000",
-        description: "Relaxing foot soak, cuticle care, scrub exfoliation and nourishing massage.",
-        image: null // e.g., "images/products/herbal-mani-pedi.jpg"
+        "name": "Organic Herbal Manicure & Pedicure",
+        "price": "Rs. 2,000",
+        "description": "Relaxing foot soak, cuticle care, scrub exfoliation and nourishing massage.",
+        "image": null
       }
     ]
   },
   {
-    id: 7,
-    name: "Mohsin Lace Center",
-    category: "Tailoring",
-    icon: "scissors",
-    image: "images/mohsin-lace.jpg",
-    contactPerson: null,
-    phoneDisplay: "0303-4637988",
-    whatsapp: "923034637988",
-    address: "Main Bazar, Near Water Plant, Muzaffargarh",
-    priceRange: "Wholesale & Retail",
-    accent: "#14b8a6",
-    products: [
+    "id": 7,
+    "name": "Mohsin Lace Center",
+    "category": "Tailoring",
+    "icon": "scissors",
+    "image": "images/mohsin-lace.jpg",
+    "contactPerson": null,
+    "phoneDisplay": "0303-4637988",
+    "whatsapp": "923034637988",
+    "address": "Main Bazar, Near Water Plant, Muzaffargarh",
+    "priceRange": "Wholesale & Retail",
+    "accent": "#14b8a6",
+    "products": [
       {
-        name: "Organza Embroidered Cutwork Lace",
-        price: "Rs. 250 / yard",
-        description: "Premium thread embroidered organza borders for kameez daman and sleeves.",
-        image: null // e.g., "images/products/organza-cutwork-lace.jpg"
+        "name": "Organza Embroidered Cutwork Lace",
+        "price": "Rs. 250 / yard",
+        "description": "Premium thread embroidered organza borders for kameez daman and sleeves.",
+        "image": null
       },
       {
-        name: "Heavy Zari & Tilla Fancy Lace",
-        price: "Rs. 400 / yard",
-        description: "Sparkling golden zari trim designed for formal dupattas and bridal lehengas.",
-        image: null // e.g., "images/products/zari-tilla-lace.jpg"
+        "name": "Heavy Zari & Tilla Fancy Lace",
+        "price": "Rs. 400 / yard",
+        "description": "Sparkling golden zari trim designed for formal dupattas and bridal lehengas.",
+        "image": null
       },
       {
-        name: "Shutter & Cotton Crochet Lace",
-        price: "Rs. 120 / yard",
-        description: "Soft breathable pure cotton lace ideal for casual summer lawn suits.",
-        image: null // e.g., "images/products/cotton-crochet-lace.jpg"
+        "name": "Shutter & Cotton Crochet Lace",
+        "price": "Rs. 120 / yard",
+        "description": "Soft breathable pure cotton lace ideal for casual summer lawn suits.",
+        "image": null
       },
       {
-        name: "Handcrafted Moti & Stone Border",
-        price: "Rs. 350 / yard",
-        description: "Delicate pearl bead and glass crystal piping for neckline detailing.",
-        image: null // e.g., "images/products/moti-stone-border.jpg"
+        "name": "Handcrafted Moti & Stone Border",
+        "price": "Rs. 350 / yard",
+        "description": "Delicate pearl bead and glass crystal piping for neckline detailing.",
+        "image": null
       },
       {
-        name: "Designer Metal & Fancy Buttons (Dozen)",
-        price: "Rs. 300",
-        description: "Antique gold and enameled button set for kurta patti and sherwanis.",
-        image: null // e.g., "images/products/designer-buttons.jpg"
+        "name": "Designer Metal & Fancy Buttons (Dozen)",
+        "price": "Rs. 300",
+        "description": "Antique gold and enameled button set for kurta patti and sherwanis.",
+        "image": null
       },
       {
-        name: "Pico, Interlock & Overlock Services",
-        price: "Rs. 150 / dupatta",
-        description: "Precision machine edging including double-sided pearl pico and satin piping.",
-        image: null // e.g., "images/products/pico-services.jpg"
+        "name": "Pico, Interlock & Overlock Services",
+        "price": "Rs. 150 / dupatta",
+        "description": "Precision machine edging including double-sided pearl pico and satin piping.",
+        "image": null
       }
     ]
   },
   {
-    id: 8,
-    name: "Posh Baby Garments",
-    category: "Kids",
-    icon: "shirt",
-    image: "images/posh-baby.jpg",
-    contactPerson: null,
-    phoneDisplay: "0315-5500888",
-    whatsapp: "923155500888",
-    address: "Hassan Plaza, Shop #15, 1st Floor, Muzaffargarh",
-    priceRange: "New Arrivals",
-    accent: "#3b82f6",
-    products: [
+    "id": 8,
+    "name": "Posh Baby Garments",
+    "category": "Kids",
+    "icon": "shirt",
+    "image": "images/posh-baby.jpg",
+    "contactPerson": null,
+    "phoneDisplay": "0315-5500888",
+    "whatsapp": "923155500888",
+    "address": "Hassan Plaza, Shop #15, 1st Floor, Muzaffargarh",
+    "priceRange": "New Arrivals",
+    "accent": "#3b82f6",
+    "products": [
       {
-        name: "Newborn 5-Piece Welcome Gift Set",
-        price: "Rs. 2,400",
-        description: "100% combed cotton bodysuit, bib, cap, mittens and soft swaddle blanket.",
-        image: null // e.g., "images/products/newborn-gift-set.jpg"
+        "name": "Toddler Formal 3-Piece Waistcoat Suit",
+        "price": "Rs. 3,200",
+        "description": "Designer textured waistcoat, kurta pajama, and tailored formal trousers for boys.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.34 PM.jpeg"
       },
       {
-        name: "Toddler Formal 3-Piece Suit",
-        price: "Rs. 3,200",
-        description: "Tailored blazer, button-down shirt and trousers with matching bow tie.",
-        image: null // e.g., "images/products/toddler-formal-suit.jpg"
+        "name": "Girl's Embroidered Velvet Sharara & Frock",
+        "price": "Rs. 3,800",
+        "description": "Heavy zari embroidered velvet party wear with matching dupatta for weddings and Eid.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.43 PM.jpeg"
       },
       {
-        name: "Cozy Quilted Winter Baby Jacket",
-        price: "Rs. 2,100",
-        description: "Fleece-lined windproof hooded jacket keeping infants warm and snug.",
-        image: null // e.g., "images/products/winter-baby-jacket.jpg"
+        "name": "Princess Net & Fur Party Frock",
+        "price": "Rs. 2,600 – Rs. 3,400",
+        "description": "Multi-layered tulle skirt frock with plush fur jacket and flower brooches.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.36 PM.jpeg"
       },
       {
-        name: "Baby Girl Princess Net Frock",
-        price: "Rs. 2,600",
-        description: "Multi-layered tulle dress with satin waistband and delicate flower brooch.",
-        image: null // e.g., "images/products/princess-net-frock.jpg"
+        "name": "Newborn Winter Warm Sweaters & Baby Bag Set",
+        "price": "Rs. 1,800 – Rs. 2,800",
+        "description": "Soft knitted pastel sweaters, fleece baby jackets, and quilted travel bag.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.57 PM.jpeg"
       },
       {
-        name: "Soft Cotton Rompers (Pack of 3)",
-        price: "Rs. 1,650",
-        description: "Snap-button everyday breathable printed onesies for active toddlers.",
-        image: null // e.g., "images/products/cotton-rompers.jpg"
+        "name": "Baby Girl Formal Collection & Boutique Wear",
+        "price": "Rs. 2,200 – Rs. 4,200",
+        "description": "Party dresses, net frocks, velvet festive suits, and matching mini clutches.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.28 PM.jpeg"
       },
       {
-        name: "Anti-Slip Pre-Walker Soft Baby Shoes",
-        price: "Rs. 850",
-        description: "Flexible sole lightweight first-step booties with cushioned heel support.",
-        image: null // e.g., "images/products/soft-baby-shoes.jpg"
+        "name": "Baby Boy Velvet Kurta & Jacket Set",
+        "price": "Rs. 2,500 – Rs. 3,500",
+        "description": "Plush embroidered winter velvet suit for infants and toddlers with matching warm socks.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.13.44 PM.jpeg"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Modern Steel House",
+    "category": "Home & Kitchen",
+    "icon": "utensils",
+    "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.32 PM.jpeg",
+    "contactPerson": "Faisal Kareem",
+    "phoneDisplay": "0304-6861520",
+    "whatsapp": "923046861520",
+    "address": "Near Hassan Plaza, Main Bazar, Muzaffargarh",
+    "priceRange": "Rs. 250 – Rs. 35,000",
+    "accent": "#f97316",
+    "products": [
+      {
+        "name": "Complete Melamine Dinner Set (72 Pcs)",
+        "price": "Rs. 14,500",
+        "description": "Royal floral printed unbreakable melamine tableware set with serving platters, soup bowls, and curry dishes.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.57 PM.jpeg"
+      },
+      {
+        "name": "Royal Insulated Hot Pot Gift Set (4 Pcs)",
+        "price": "Rs. 4,800",
+        "description": "Stainless steel interior thermal insulated casseroles keeping rotis and curries steaming hot for hours.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.44 PM.jpeg"
+      },
+      {
+        "name": "Stainless Steel Cooking Pots & Thali Set",
+        "price": "Rs. 6,500",
+        "description": "Heavy gauge pure stainless steel cooking degchis, tiffin carriers, and serving trays.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.39 PM.jpeg"
+      },
+      {
+        "name": "Glassware Jug & Tumbler Drinkware Set",
+        "price": "Rs. 2,200",
+        "description": "Imported crystal embossed water set with 1 large jug and 6 matching drinking glasses.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.42 PM.jpeg"
+      },
+      {
+        "name": "Kitchen Appliances & Insulated Water Coolers",
+        "price": "Rs. 3,200 – Rs. 8,500",
+        "description": "Sandwich toasters, juicer blenders, electric kettles, and high-capacity water coolers.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.40 PM.jpeg"
+      },
+      {
+        "name": "Household Plasticware & Storage Baskets",
+        "price": "Rs. 350 – Rs. 1,600",
+        "description": "Durable laundry baskets, pedal dustbins, dish drainers, and food storage tubs.",
+        "image": "images/New folder (2)/WhatsApp Image 2026-11-21 at 8.12.38 PM.jpeg"
       }
     ]
   }
